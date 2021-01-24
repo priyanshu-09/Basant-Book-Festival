@@ -3,13 +3,47 @@ body {
     overflow-x: hidden;
 }
 
+@font-face {
+    font-family: 'Arial Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Arial Regular'), url('assets/fonts/ARIAL.woff') format('woff');
+}
+
+.frost {
+    width: 100vw;
+    height: 300vh;
+    position: absolute;
+    left: 0;
+    z-index: -2;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #B993D6 0%, #8CA6DB 100%);
+    box-shadow: 14px 17px 17px rgba(7, 7, 7, 0.14);
+    z-index: -1;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 200vh;
-    background: #E5E5E5;
+    height: 300vh;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(14px);
+    z-index: 1;
+}
+
+.wrapper div {
+    z-index: 1;
 }
 
 .header {
@@ -49,10 +83,11 @@ body {
     right: 76.88%;
     top: 36.11%;
     bottom: 36.11%;
-    font-family: Gilroy;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
+    letter-spacing: 0ch;
     line-height: 20px;
     /* identical to box height, or 143% */
     font-feature-settings: 'liga' off;
@@ -82,7 +117,7 @@ body {
 }
 
 .button_text {
-    font-family: Gilroy;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -103,28 +138,13 @@ body {
 .landing_svg {
     position: absolute;
     left: 0;
-    bottom: 0;
     width: 100vw;
     right: 0;
+    /* transform: scaleY(.75); */
 }
 
 .about {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-}
-
-.about_svg1 {
-    top: 100vh;
-    left: 0;
-    position: absolute;
-    width: 100vw;
-    right: 0;
-}
-
-.about_svg2 {
-    left: 0;
-    bottom: -100vh;
-    width: 100vw;
-    position: absolute;
 }
