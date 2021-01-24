@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 200vh;
+    background: #E5E5E5;
+    overflow-x: hidden;
+}
+
+.header {
+    width: 100vw;
+    height: 10vh;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* width: 173px;
+    height: 20px; */
+    width: 20vw;
+    height: 10vh;
+    left: 0px;
+    top: 26px;
+}
+
+.icon {
+    width: 30px;
+    height: 20px;
+    left: 5vw;
+    top: calc(5vh - 10px);
+    background: url('assets/icon.png');
+    margin-right: 10px;
+}
+
+.icon_name {
+    left: 13.75%;
+    right: 76.88%;
+    top: 36.11%;
+    bottom: 36.11%;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    font-feature-settings: 'liga' off;
+    color: #000000;
+}
+
+.login_button_container {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login_button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 109px;
+    height: 44px;
+    left: 1177px;
+    top: 14px;
+    background: #3D429C;
+    border-radius: 28px;
+    cursor: pointer;
+}
+
+.button_text {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+    text-align: center;
+    font-feature-settings: 'liga' off;
+    /* Default / White */
+    color: #FFFFFF;
+}
+
+.landing {
+    width: 100vw;
+    height: 90vh;
+    overflow-x: hidden;
+}
+
+.landing_svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    right: 0;
+}
+
+.about {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.about_svg1 {
+    top: 100vh;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    right: 0;
+}
+
+.about_svg2 {
+    left: 0;
+    bottom: -100vh;
+    width: 100vw;
+    position: absolute;
+}
