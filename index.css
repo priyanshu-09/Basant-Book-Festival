@@ -51,7 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 300vh;
+    height: 330vh;
     overflow-x: hidden;
     scroll-behavior: smooth;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.3);
@@ -348,7 +348,8 @@ body {
     background: rgba(250, 250, 250, 0.5);
     backdrop-filter: blur(3px);
 }
-.left_footer{
+
+.left_footer {
     height: 30vh;
     width: 30vw;
     margin-left: 10vw;
@@ -357,23 +358,23 @@ body {
     align-items: center;
     justify-content: center;
 }
-.footer_logo{
+
+.footer_logo {
     width: 30vw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
 }
-.footer_bits_logo{
+
+.footer_bits_logo {
     height: 8vh;
 }
-.footer_links{
+
+.footer_links {
     width: 30vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-}
-.footer_links>a{
-    
-}
+.footer_links>a {}
