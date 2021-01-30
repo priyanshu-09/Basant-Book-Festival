@@ -329,10 +329,12 @@ body {
     height: 18vh;
     width: 18vh;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .stalls_heading {
     font-weight: bold;
     font-size: 1em;
+    cursor: pointer;
     /* line-height: 29px; */
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="book.css">
+    <link rel="icon" href="assets/icon.png">
+    <title>Books</title>
+</head>
+
+<body>
+    <div class="fake_header"></div>
+    <img src="assets/bg_book.png" class="background">
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <div class="icon"></div>
+                <div class="icon_name">Basant Book Festival</div>
+            </div>
+            <div class="login_button_container">
+                <div id="login_button" class="button">
+                    Login
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="search_section">
+                <div class="back_button" onclick="location.href='index.html'"></div>
+                <div class="search_bar"></div>
+            </div>
+            <div class="box">
+                <div class="rounded_box">
+                    <div>
+                        <img src="assets/book_cover.png" class="book_img">
+                    </div>
+                    <div class="book_content">
+                        <div id="book_heading">
+                            Think and Grow Rich
+                        </div>
+                        <div id="book_author">
+                            Napoleon Hill
+                        </div>
+                        <div class="book_publisher_container">
+                            by<div id="book_publisher">Penguine Random House
+                            </div>
+                        </div>
+                        <div class="book_price_container">
+                            <div id="book_new_price">
+                                &#8377 599
+                            </div>
+                            <div id="book_old_price">
+                                &#8377 699
+                            </div>
+                            <div id='discount'>
+                                Save 25%
+                            </div>
+                        </div>
+                        <div class="button_container">
+                            <div class="button">
+                                Buy Now
+                            </div>
+                        </div>
+                        <div class="button_container">
+                            <div class="button">
+                                Recommend to Library
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const params = new URLSearchParams(window.location.search)
+    for (const param of params) {
+        console.log(param)
+    }
+</script>
+
+</html>

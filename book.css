@@ -1,0 +1,143 @@
+body {}
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+}
+
+.fake_header {
+    width: 100vw;
+    height: 10vh;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: -1;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    /* backdrop-filter: blur(250px); */
+}
+
+.wrapper {
+    height: 100vh;
+    background: transparent;
+    backdrop-filter: blur(1px);
+}
+
+.search_section {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+}
+
+.box {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rounded_box {
+    height: 70vh;
+    width: 70vw;
+    border-radius: 20px;
+    background: rgba(250, 250, 250, 0.3);
+    /* opacity: 0.3; */
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+}
+
+.book_img {
+    height: 60vh;
+    /* width: 20vw; */
+    margin-left: 5vw;
+}
+
+.book_content {
+    height: 60vh;
+    width: 40vw;
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#book_heading {
+    width: 40vw;
+    font-size: 1.5em;
+    font-weight: bold;
+    /* font-size: 32px; */
+    line-height: 39px;
+    margin-bottom: 2vh;
+    margin-top: 10vh;
+}
+
+#book_author {
+    width: 40vw;
+    font-size: 1em;
+    font-weight: lighter;
+    /* font-size: 18px; */
+    /* line-height: 21px; */
+    color: darkgray;
+    margin-bottom: 1vh;
+}
+
+.book_publisher_container {
+    width: 40vw;
+    font-size: 1em;
+    font-weight: lighter;
+    color: darkgray;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#book_publisher {
+    font-weight: bold;
+    color: #4658D0;
+    /* color: #3D429C; */
+    margin-left: 1vw;
+}
+
+.book_price_container {
+    display: flex;
+    margin-bottom: 3vh;
+    width: 40vw;
+}
+
+#book_new_price {
+    margin-right: 1vw;
+    font-weight: 500;
+    font-size: 1.25em;
+    line-height: 21px;
+    /* identical to box height */
+    color: #FF596B;
+}
+
+#book_old_price {
+    margin-right: 1vw;
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: 21px;
+    text-decoration-line: line-through;
+    color: #3C3C3C;
+}
+
+#discount {
+    font-weight: 300;
+    font-size: 0.8em;
+    height: 100%;
+    line-height: 26px;
+    color: #3C3C3C;
+}
+
+.button_container {
+    width: 40vw;
+    display: flex;
+    margin-bottom: 1vh;
+}
