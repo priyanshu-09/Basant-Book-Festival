@@ -29,6 +29,41 @@ body {}
     height: 10vh;
     width: 100vw;
     display: flex;
+    align-items: center;
+}
+
+.back_button {
+    height: 5vh;
+    width: 5vh;
+    background: #3D429C;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20vw;
+    margin-right: 2.5vw;
+    cursor: pointer;
+}
+
+.arrow {
+    height: 1.5vh;
+}
+
+.search_bar {
+    height: 5vh;
+    width: 20vw;
+    background: rgba(250, 250, 250, 0.5);
+    backdrop-filter: blur(3px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 8px;
+    outline: none;
+    color: #3c3c3c;
+    padding-left: 2vw;
+    border: none;
+}
+
+.search_bar:focus {
+    outline: darkgray;
 }
 
 .box {
