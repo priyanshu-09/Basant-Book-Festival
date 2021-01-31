@@ -1,7 +1,7 @@
 let publishers_arr = []
 
 
-fetch("http://159.89.170.179/api/publisher/list/")
+fetch("https://159.89.170.179/api/publisher/list/")
     .then(response => response.json())
     .then(data => {
         publishers_arr = data.data

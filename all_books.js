@@ -19,7 +19,7 @@ let requestOptions = {
     redirect: 'follow'
 };
 
-fetch("http://159.89.170.179/api/book/filter/fs/publisher/", requestOptions)
+fetch("https://159.89.170.179/api/book/filter/fs/publisher/", requestOptions)
     .then(response => response.json())
     .then(result => {
         whole_books_arr = result.data
