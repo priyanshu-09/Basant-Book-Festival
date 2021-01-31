@@ -10,22 +10,23 @@ let whole_books_arr = []
 let current_page_number = 1
 let total_books = 0
 
-let formdata = new FormData();
-formdata.append("search", id_of_publisher);
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
-let requestOptions = {
+var raw = JSON.stringify({ "search": id_of_publisher.toString() });
+
+var requestOptions = {
     method: 'POST',
-    body: formdata,
+    headers: myHeaders,
+    body: raw,
     redirect: 'follow'
 };
 
-fetch("https://159.89.170.179/api/book/filter/fs/publisher/", requestOptions)
-    .then(response => response.json())
+fetch("http://159.89.170.179/api/book/1/", requestOptions)
+    .then(response => response.text())
     .then(result => {
-        whole_books_arr = result.data
-        total_books = whole_books_arr.length
-        console.log(whole_books_arr)
-        console.log(total_books)
+        whole_books_arr = result.data;
+        total_books = whole_books_arr.length;
         paginate()
     })
     .catch(error => console.log('error', error));
