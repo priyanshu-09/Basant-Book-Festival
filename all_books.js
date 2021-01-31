@@ -1,9 +1,7 @@
 const params = new URLSearchParams(window.location.search)
 let id_of_publisher
 for (const param of params) {
-    if (param != 'id') {
-        id_of_publisher = parseInt(param)
-    }
+	id_of_publisher = param[1]
 }
 
 let whole_books_arr = []
@@ -13,7 +11,8 @@ let total_books = 0
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({ "search": id_of_publisher.toString() });
+console.log(id_of_publisher)
+var raw = JSON.stringify({ "search": id_of_publisher });
 
 var requestOptions = {
     method: 'POST',
@@ -22,9 +21,10 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-fetch("http://159.89.170.179/api/book/1/", requestOptions)
-    .then(response => response.text())
+fetch("https://159.89.170.179/api/book/filter/fs/publisher/", requestOptions)
+    .then(response => response.json())
     .then(result => {
+	console.log(result.data)
         whole_books_arr = result.data;
         total_books = whole_books_arr.length;
         paginate()
