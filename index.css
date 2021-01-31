@@ -65,7 +65,7 @@ body {
 
 .header {
     width: 100vw;
-    height: 10vh;
+    height: 8vh;
     left: 0px;
     top: 0px;
     display: flex;
@@ -116,15 +116,15 @@ body {
     align-items: center;
 }
 
-.button {
+.button, .button_inverse {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     color: white;
-    width: 109px;
-    height: 44px;
-    left: 1177px;
+    padding: 1.5vh 2vw 1.5vh 2vw;
+    width: fit-content;
+    height: auto;
     top: 14px;
     background: #3D429C;
     border-radius: 28px;
@@ -134,8 +134,25 @@ body {
     /* identical to box height, or 125% */
     text-align: center;
     font-feature-settings: 'liga' off;
+    border: 2px solid #3D429C;
     /* Default / White */
 }
+
+.button_inverse {
+    background-color: transparent;
+    color: #3D429C;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: #3D429C;
+}
+
+/* 
+.button_inverse:hover {
+    background-color: #3D429C;
+    color: white;
+} */
 
 .landing {
     width: 100vw;
@@ -176,7 +193,7 @@ body {
     font-size: 42px;
     line-height: 51px;
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 12.5vh;
     font-weight: lighter;
 }
 
@@ -184,7 +201,7 @@ body {
     width: 50vw;
     display: flex;
     justify-content: center;
-    margin-top: 5vh;
+    margin-top: 2.5vh;
 }
 
 .big_icon {
@@ -192,10 +209,10 @@ body {
 }
 
 .vbbf {
-    font-weight: 800;
-    font-size: 56px;
-    line-height: 69px;
-    width: 70vw;
+    font-weight: 900;
+    font-size: 3.5em;
+    /* line-height: 69px; */
+    width: 90vw;
     text-align: center;
     color: #ee307a;
 }
@@ -204,7 +221,7 @@ body {
     width: 50vw;
     text-align: center;
     font-weight: bold;
-    font-size: 46px;
+    font-size: 2.75em;
     line-height: 56px;
 }
 
@@ -254,6 +271,10 @@ body {
 .about_button>div {
     padding-left: 2vw;
     padding-right: 2vw;
+}
+
+.about_button>div:hover {
+    background-color: #3D429C;
 }
 
 .button>a {
@@ -311,7 +332,7 @@ body {
 
 .publishers_flexbox {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100vw;
     height: 22vh;
@@ -323,6 +344,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 2vw 0 2vw;
 }
 
 .stalls_image {
@@ -334,9 +356,11 @@ body {
 
 .stalls_heading {
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.25em;
+    color: black;
     cursor: pointer;
     /* line-height: 29px; */
+    margin-top: 0.5vh;
 }
 
 .footer {
@@ -373,6 +397,64 @@ body {
 .footer_links {
     width: 30vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    margin-top: 3vh;
+}
+
+.footer_links a {
+    text-decoration: none;
+    font-size: 1em;
+    margin-right: 1vw;
+    font-weight: lighter;
+    color: black;
+    cursor: pointer;
+}
+
+.copyright {
+    width: 30vw;
+    font-weight: lighter;
+    font-size: 0.9em;
+    margin-top: 3vh;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    font-feature-settings: 'liga' off;
+    color: #4F4F4F;
+}
+
+.right_footer {
+    height: 30vh;
+    width: 30vw;
+    /* margin-right: 10vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_us_heading {
+    font-size: 1.6em;
+    width: 30vw;
+    font-weight: normal;
+    margin-bottom: 3vh;
+}
+
+.contact_us_links_container {
+    margin-bottom: 1vh;
+    width: 30vw;
+    display: flex;
+}
+
+.contact_us_links_container a {
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.mail_icon {
+    height: 1em;
+    margin-right: 0.5vw;
+    cursor: pointer;
 }

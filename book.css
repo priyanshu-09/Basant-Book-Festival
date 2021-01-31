@@ -1,5 +1,3 @@
-body {}
-
 .background {
     height: 100vh;
     width: 100vw;
@@ -8,7 +6,7 @@ body {}
 
 .fake_header {
     width: 100vw;
-    height: 10vh;
+    height: 8vh;
     left: 0px;
     top: 0px;
     position: absolute;
@@ -174,5 +172,9 @@ body {}
 .button_container {
     width: 40vw;
     display: flex;
-    margin-bottom: 1vh;
+    margin-bottom: 1.5vh;
+}
+
+.button_container>div {
+    width: max-content;
 }

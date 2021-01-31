@@ -1,3 +1,28 @@
+.next, .prev {
+    position: absolute;
+    font-size: 0.7em;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    bottom: 2vh;
+    height: max-content;
+    top: 90vh;
+    z-index: 3;
+}
+
+.next:hover {
+    background: transparent;
+    color: #3D429C;
+}
+
+.prev {
+    left: 2vw;
+    display: none;
+}
+
+.next {
+    right: 2vw;
+}
+
 .rest_container {
     height: 80vh;
     width: 100vw;
@@ -6,7 +31,7 @@
 }
 
 .all_books_heading {
-    height: 10vh;
+    /* height: 10vh; */
     width: 100vw;
     font-weight: bold;
     font-size: 2em;

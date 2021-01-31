@@ -38,7 +38,9 @@
                     <img src="assets/icon.png" class="big_icon">
                 </div>
                 <div class="vbbf">
-                    VIRTUAL BASANT BOOK FESTIVAL
+                    VIRTUAL <span style="color: #131867;">B</span><span style="color: #25a5e2;">A</span><span
+                        style="color:#007d25 ;">S</span><span style="color:#ede200 ;">A</span><span
+                        style="color:#e36d00 ;">N</span><span style="color: #910013;">T</span> BOOK FESTIVAL
                 </div>
                 <div class="date">
                     8-13 FEB 2021
@@ -46,7 +48,7 @@
             </div>
 
         </div>
-        <div class="about">
+        <div class="about" id='about'>
             <div class="about_text_container">
                 <div class="about_heading">
                     About Basant Book Festival
@@ -194,30 +196,52 @@
                 <div class="footer_logo">
                     <img class="footer_bits_logo" src="assets/logo.png">
                 </div>
+                <div class="footer_links">
+                    <div><a href="#about">About</a></div>
+                    <div><a href="#publishers">Publishers</a></div>
+
+                </div>
+                <div class="copyright">
+                    &#169 2021 BITS Pilani Library. All rights reserved
+                </div>
             </div>
             <div class="right_footer">
-
+                <div class="contact_us_heading">Contact Us :</div>
+                <div class='contact_us_links_container'>
+                    <div>
+                        <img src="assets/email-icon.png" class="mail_icon">
+                    </div>
+                    <div>
+                        <a>hello@gmail.com</a>
+                    </div>
+                </div>
+                <div class='contact_us_links_container'>
+                    <div>
+                        <img src="assets/email-icon.png" class="mail_icon">
+                    </div>
+                    <div>
+                        <a>hello@gmail.com</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
-<script>
-    // fetch('http://159.89.170.179/api/book/filter/title', {
-    //     method: 'POST',
-    //     headers: {
+<script src="index.js" ></script>
+<!-- <script>
+    var formdata = new FormData();
+    formdata.append("search", "gh");
 
-    //         'Content-Type': 'application/json',
+    var requestOptions = {
+        method: 'POST',
+        body: formdata,
+        redirect: 'follow'
+    };
 
-    //     },
-    //     body: JSON.stringify({
-    //         search: 'Hi'
-    //     })
-    // })
-    //     // .then(response => response.json())
-    //     .then(data => console.log(data))
-    //     .catch(error => console.log(error))
-
-
-</script>
+    fetch("http://159.89.170.179/api/book/filter/fs/title/", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+</script> -->
 
 </html>
