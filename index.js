@@ -1,5 +1,5 @@
 var url = window.location;
-
+console.log(url)
 var access_token = new URLSearchParams(url.search).get('access_token');
 console.log(access_token)
 
