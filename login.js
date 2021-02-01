@@ -16,6 +16,7 @@ function attachSignin(element) {
     console.log(element.id);
     auth2.attachClickHandler(element, {},
         function (googleUser) {
+            onSignIn(googleUser)
             console.log(localStorage.getItem('token'))
             document.getElementById('login_button').innerHTML = "Welcome " +
                 googleUser.getBasicProfile().getGivenName();
