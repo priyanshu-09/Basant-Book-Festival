@@ -11,7 +11,7 @@ for (const param of params) {
 }
 var obj
 
-fetch(`https://bbf.bitspilani.ac.in/api/book/${id_of_book}`)
+fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
     .then(response => response.json())
     .then(data => {
         obj = data.data[0]

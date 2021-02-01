@@ -1,7 +1,7 @@
 let publishers_arr = []
 
 
-fetch("https://bbf.bitspilani.ac.in/api/publisher/list/")
+fetch("https://bbf.bits-pilani.ac.in/api/publisher/list/")
     .then(response => response.json())
     .then(data => {
         publishers_arr = data.data
@@ -49,7 +49,7 @@ function create_stalls(obj, x) {
     var src = document.createAttribute('src')
     var img_class = document.createAttribute('class')
     var onclick = document.createAttribute('onclick')
-    var root_url = 'http://bbf.bitspilani.ac.in/media/'
+    var root_url = 'http://bbf.bits-pilani.ac.in/media/'
     src.value = root_url + obj.logo
     img_class.value = 'stalls_image'
     onclick.value = `location.href='all_books.html?id=${obj.id}&name=${obj.name}'`

@@ -29,7 +29,7 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-fetch("https://bbf.bitspilani.ac.in/api/book/filter/fs/publisher/", requestOptions)
+fetch("https://bbf.bits-pilani.ac.in/api/book/filter/fs/publisher/", requestOptions)
     .then(response => response.json())
     .then(result => {
         console.log(result.data)
