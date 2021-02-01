@@ -1,6 +1,11 @@
 
 // var access_token = new URLSearchParams(url_now.search).get('access_token');
 // console.log(access_token)
+if(localStorage.getItem('name')!=undefined){
+    document.getElementById('login_button').innerHTML = "Welcome "+localStorage.getItem('name')
+}
+
+
 
 let publishers_arr = []
 
@@ -9,6 +14,7 @@ fetch("https://bbf.bits-pilani.ac.in/api/publisher/list/")
     .then(response => response.json())
     .then(data => {
         publishers_arr = data.data
+        shuffle(publishers_arr)
         populate_publilshers()
     })
     .catch(error => console.log('error', error));

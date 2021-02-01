@@ -1,3 +1,7 @@
+if(localStorage.getItem('name')!=undefined){
+    document.getElementById('login_button').innerHTML = "Welcome "+localStorage.getItem('name')
+}
+
 const params = new URLSearchParams(window.location.search)
 let id_of_publisher
 let name_of_publisher

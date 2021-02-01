@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="book.css">
     <link rel="stylesheet" href="all_books.css">
     <link rel="icon" href="assets/icon.png">
+
+    <meta name="google-signin-scope" content="profile email">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <meta name="google-signin-client_id"
+        content="681636635176-ies3cblqevrapsbdlvegihfia6pu8tnd.apps.googleusercontent.com">
     <title>All Books</title>
 </head>
 
@@ -26,9 +32,10 @@
                 <div><img src="assets/logo.png" class="icon" onclick="location.href='index.html'"></div>
             </div>
             <div class="login_button_container">
-                <div id="login_button" class="button">
+                <div id="login_button" class="button customGPlusSignIn" >
                     Login
                 </div>
+
             </div>
         </div>
         <div class="content">
@@ -253,5 +260,5 @@
     </div>
 </body>
 <script src="all_books.js"></script>
-
+<script src="login.js"></script>
 </html>

@@ -17,7 +17,6 @@ function attachSignin(element) {
     auth2.attachClickHandler(element, {},
         function (googleUser) {
             onSignIn(googleUser)
-            console.log(localStorage.getItem('token'))
             document.getElementById('login_button').innerHTML = "Welcome " +
                 googleUser.getBasicProfile().getGivenName();
         }, function (error) {
@@ -52,13 +51,12 @@ function authenticate(id_token) {
     fetch("https://bbf.bits-pilani.ac.in/api/auth/authenticate/", requestOptions)
         .then(response => response.json())
         .then(result => {
-            console.log(result)
+            localStorage.clear();
             localStorage.setItem("token", result.token);
-            console.log(localStorage.getItem('token'))
+            localStorage.setItem("name",result.first_name)
         })
-        .catch(error => console.log('error', error));
+        .catch(error => alert(error));
 
 
 }
-console.log(localStorage.getItem('token'))
 startApp()

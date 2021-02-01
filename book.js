@@ -1,3 +1,7 @@
+if (localStorage.getItem('name') != undefined) {
+    document.getElementById('login_button').innerHTML = "Welcome " + localStorage.getItem('name')
+}
+
 const params = new URLSearchParams(window.location.search)
 let id_of_book
 let publisher_name
@@ -121,8 +125,8 @@ function Buy() {
     document.getElementsByClassName('wrapper')[0].style.opacity = '0'
 
     document.getElementById('pop_up_content').innerHTML = `
-        Thank you for recommending the book for the Library!<br>
-This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.<br><br>
+        Thank you for selecting the book for your personal use. <br>
+         This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final purchase by you. On your confirmation, the vendor will issue a bill in your name to make the payment. Once the payment is made, you can collect the book from the Library.<br><br>
 Are you sure you want to continue ?
     `
 }
@@ -139,9 +143,9 @@ Are you sure you want to continue ?
 
 }
 
-function cancel(){
+function cancel() {
     document.getElementById('pop_up').style.display = 'none'
     document.getElementsByClassName('wrapper')[0].style.opacity = '1'
 
-    document.getElementById('pop_up_content').innerHTML =''
+    document.getElementById('pop_up_content').innerHTML = ''
 }
