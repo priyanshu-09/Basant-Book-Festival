@@ -1,3 +1,8 @@
+var url = window.location;
+
+var access_token = new URLSearchParams(url.search).get('access_token');
+console.log(access_token)
+
 let publishers_arr = []
 
 
