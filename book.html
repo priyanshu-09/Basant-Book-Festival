@@ -12,12 +12,24 @@
 
 <body>
     <div class="fake_header"></div>
+    <div id="pop_up">
+        <div id="pop_up_content">
+
+        </div>
+        <div class="buttons_container">
+            <div class="button_inverse" onclick="cancel()">
+                Cancel
+            </div>
+            <div class="button" onclick="cancel()">
+                Yes
+            </div>
+        </div>
+    </div>
     <img src="assets/bg_book.png" class="background">
     <div class="wrapper">
         <div class="header">
             <div class="logo">
-                <div class="icon"></div>
-                <div class="icon_name">Basant Book Festival</div>
+                <div><img src="assets/logo.png" class="icon" onclick="location.href='index.html'"></div>
             </div>
             <div class="login_button_container">
                 <div id="login_button" class="button">

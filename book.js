@@ -87,7 +87,10 @@ function populate() {
 
     var personal_use_button = document.createElement('div')
     personal_use_button.classList.add('button')
+    var onclick_buy = document.createAttribute('onclick')
+    onclick_buy.value = 'Buy()'
     personal_use_button.innerHTML = 'Buy for Personal Use'
+    personal_use_button.setAttributeNode(onclick_buy)
     personal_use.appendChild(personal_use_button)
 
     var recommended = document.createElement('div')
@@ -95,7 +98,10 @@ function populate() {
 
     var recommended_button = document.createElement('div')
     recommended_button.classList.add('button_inverse')
+    var onclick_recommend = document.createAttribute('onclick')
+    onclick_recommend.value = 'Recommend()'
     recommended_button.innerHTML = 'Recommend to Library'
+    recommended_button.setAttributeNode(onclick_recommend)
     recommended.appendChild(recommended_button)
 
     book_content.appendChild(book_heading)
@@ -108,4 +114,34 @@ function populate() {
     document.getElementsByClassName('rounded_box')[0].appendChild(book_img_container)
     document.getElementsByClassName('rounded_box')[0].appendChild(book_content)
 
+}
+
+function Buy() {
+    document.getElementById('pop_up').style.display = 'flex'
+    document.getElementsByClassName('wrapper')[0].style.opacity = '0'
+
+    document.getElementById('pop_up_content').innerHTML = `
+        Thank you for recommending the book for the Library!<br>
+This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.<br><br>
+Are you sure you want to continue ?
+    `
+}
+function Recommend() {
+
+    document.getElementById('pop_up').style.display = 'flex'
+    document.getElementsByClassName('wrapper')[0].style.opacity = '0'
+
+    document.getElementById('pop_up_content').innerHTML = `
+        Thank you for recommending the book for the Library!<br>
+This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.<br><br>
+Are you sure you want to continue ?
+    `
+
+}
+
+function cancel(){
+    document.getElementById('pop_up').style.display = 'none'
+    document.getElementsByClassName('wrapper')[0].style.opacity = '1'
+
+    document.getElementById('pop_up_content').innerHTML =''
 }

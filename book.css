@@ -4,6 +4,38 @@
     z-index: -2;
 }
 
+#pop_up {
+    height: 60vh;
+    width: 60vw;
+    border-radius: 20px;
+    background: rgba(250, 250, 250, 0.3);
+    /* opacity: 0.3; */
+    backdrop-filter: blur(3px);
+    z-index: 10;
+    position: absolute;
+    top: 20vh;
+    left: 20vw;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pop_up_content {
+    width: 50vw;
+    font-size: 1.5em;
+    margin-bottom: 3vh;
+    text-align: center;
+    font-weight: normal;
+}
+
+.buttons_container {
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .fake_header {
     width: 100vw;
     height: 8vh;
@@ -13,14 +45,14 @@
     z-index: -1;
     background: #FFFFFF;
     mix-blend-mode: normal;
-    opacity: 0.25;
+    opacity: 0.2;
     /* backdrop-filter: blur(250px); */
 }
 
 .wrapper {
     height: 100vh;
     background: transparent;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(8px);
 }
 
 .search_section {

@@ -69,3 +69,20 @@ function create_stalls(obj, x) {
 
 
 }
+
+var height_of_svg = document.getElementsByClassName('landing_svg')[0].offsetHeight
+var percent_on_hero_section
+console.log('window width', window.innerWidth)
+console.log('window outer width', window.outerWidth)
+if (window.outerWidth > 600) {
+    percent_on_hero_section = 0.825
+    console.log('web')
+}
+else {
+    console.log('mobile')
+    percent_on_hero_section = 0.725
+}
+console.log(window.outerHeight)
+console.log(height_of_svg)
+
+document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
