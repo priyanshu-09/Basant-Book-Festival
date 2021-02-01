@@ -40,7 +40,7 @@ function onSignIn(googleUser) {
 function authenticate(id_token) {
     var formdata = new FormData();
     formdata.append("id_token", id_token);
-   
+
     var requestOptions = {
         method: 'POST',
         body: formdata,
@@ -58,3 +58,4 @@ function authenticate(id_token) {
 
 
 }
+startApp()
