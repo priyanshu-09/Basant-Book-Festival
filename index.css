@@ -109,10 +109,11 @@ body {
 }
 
 .login_button_container {
-    width: 20vw;
+    width: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 2vw;
 }
 
 .button, .button_inverse {
@@ -469,6 +470,7 @@ body {
     .login_button_container {
         padding-right: 5vw;
         padding-top: 1vh;
+        max-width: 50vw;
     }
     .main_heading {
         width: 100vw;
@@ -491,8 +493,7 @@ body {
         font-size: 1.75em;
         line-height: 56px;
     }
-    .about{
+    .about {
         display: block;
-        
     }
 }

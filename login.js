@@ -58,4 +58,5 @@ function authenticate(id_token) {
 
 
 }
+console.log(localStorage.getItem('token'))
 startApp()
