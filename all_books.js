@@ -1,7 +1,15 @@
 const params = new URLSearchParams(window.location.search)
 let id_of_publisher
+let name_of_publisher
+
+
 for (const param of params) {
-	id_of_publisher = param[1]
+    if (param[0] == 'id') {
+        id_of_publisher = param[1]
+    }
+    else {
+        name_of_publisher = param[1]
+    }
 }
 
 let whole_books_arr = []
@@ -21,12 +29,17 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-fetch("https://159.89.170.179/api/book/filter/fs/publisher/", requestOptions)
+fetch("https://bbf.bitspilani.ac.in/api/book/filter/fs/publisher/", requestOptions)
     .then(response => response.json())
     .then(result => {
-	console.log(result.data)
+        console.log(result.data)
         whole_books_arr = result.data;
         total_books = whole_books_arr.length;
+        document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher
+        if (total_books < 9) {
+            document.getElementsByClassName('next')[0].style.display = 'none'
+            console.log('hi')
+        }
         paginate()
     })
     .catch(error => console.log('error', error));
@@ -35,10 +48,7 @@ document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
 document.getElementsByClassName('books_flexbox')[1].innerHTML = ''
 document.getElementsByClassName('next')[0].style.display = 'flex'
 
-if (total_books < 9) {
-    document.getElementsByClassName('next')[0].style.display = 'none'
-    console.log('hi')
-}
+
 
 function paginate() {
     document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
@@ -68,7 +78,7 @@ function populate_books(obj, row) {
     var container_div = document.createElement('div')
     container_div.classList.add('book_card')
     var onclick = document.createAttribute('onclick')
-    onclick.value = `location.href='book.html?id=${obj.id}'`
+    onclick.value = `location.href='book.html?id=${obj.id}&name=${name_of_publisher}'`
     container_div.setAttributeNode(onclick)
 
     var book_img_container = document.createElement('div')
@@ -100,11 +110,11 @@ function populate_books(obj, row) {
 
     var new_price = document.createElement('div')
     new_price.classList.add('new_price')
-    new_price.innerHTML = '&#8377' + obj.expected_price
+    new_price.innerHTML = '₹' + obj.expected_price
 
     var old_price = document.createElement('div')
     old_price.classList.add('old_price')
-    old_price.innerHTML = '&#8377' + obj.price_indian_currency
+    old_price.innerHTML = '₹' + obj.price_indian_currency
 
     var discount = document.createElement('div')
     discount.classList.add('discount')
