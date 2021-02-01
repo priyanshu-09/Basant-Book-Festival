@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="assets/icon.png">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id"
+        content="681636635176-ies3cblqevrapsbdlvegihfia6pu8tnd.apps.googleusercontent.com">
     <title>BBF</title>
 </head>
 
@@ -22,6 +25,7 @@
                 <div id="login_button" class="button">
                     Login
                 </div>
+
             </div>
 
         </div>
@@ -205,6 +209,7 @@
                 </div>
             </div>
             <div class="right_footer">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 <div class="contact_us_heading">Contact Us :</div>
                 <div class='contact_us_links_container'>
                     <div>
