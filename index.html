@@ -22,7 +22,7 @@
                 <div><img src="assets/logo.png" class="icon" onclick="location.href='index.html'"></div>
             </div>
             <div class="login_button_container">
-                <div id="login_button" class="button">
+                <div id="login_button" class="button" onclick="login_handler()">
                     Login
                 </div>
 
@@ -247,5 +247,20 @@
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 </script> -->
+<script>
+    const qParams = [
+        `client_id=681636635176-ies3cblqevrapsbdlvegihfia6pu8tnd.apps.googleusercontent.com`,
+        `redirect_uri=https://priyanshu-09.github.io/Basant-Book-Festival/`,
+        `response_type=token`,
+        `scope=https://www.googleapis.com/auth/drive.metadata.readonly`,
+        `state=true`,
+        `prompt=consent`,
+    ].join("&");
+
+    const url = "https://accounts.google.com/o/oauth2/v2/auth?" + qParams;
+    const loginHandler = () => {
+        window.location.assign(url);
+    };
+</script>
 
 </html>
