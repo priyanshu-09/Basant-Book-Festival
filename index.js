@@ -1,8 +1,4 @@
-var url_now = window.location;
-console.log(url_now)
-var arr1 = url_now.hash.split('&')
-var arr2 = arr1[1].split('=')
-console.log(arr2[1])
+
 // var access_token = new URLSearchParams(url_now.search).get('access_token');
 // console.log(access_token)
 

@@ -252,7 +252,7 @@
         `client_id=681636635176-ies3cblqevrapsbdlvegihfia6pu8tnd.apps.googleusercontent.com`,
         `redirect_uri=https://priyanshu-09.github.io/Basant-Book-Festival/`,
         `response_type=token`,
-        `scope=https://www.googleapis.com/auth/drive.metadata.readonly`,
+        // `scope=https://www.googleapis.com/auth/drive.metadata.readonly`,
         `state=true`,
         `prompt=consent`,
     ].join("&");
@@ -261,6 +261,31 @@
     const login_handler = () => {
         window.location.assign(url);
     };
+
+    var url_now = window.location;
+    console.log(url_now)
+    var arr1 = url_now.hash.split('&')
+    var arr2 = arr1[1].split('=')
+    console.log(arr2[1])
+    var access_token = arr2[1]
+
+    if (access_token != null) {
+        fetch("https://oauth2.googleapis.com/token", {
+            code: access_token,
+            client_id: '681636635176-ies3cblqevrapsbdlvegihfia6pu8tnd.apps.googleusercontent.com',
+            client_secret: 'k2e3X8JsUSBouSCxx2gA1H__',
+            redirect_uri: 'https://priyanshu-09.github.io/Basant-Book-Festival/',
+            grant_type: "authorization_code",
+        })
+            .then((res) => {
+                const response = res.data;
+                id_token = response.id_token;
+                console.log(id_token)
+            })
+            .catch((err) => console.log(err.response));
+    }
+
+
 </script>
 
 </html>
