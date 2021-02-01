@@ -99,7 +99,10 @@ function populate_books(obj, row) {
 
     var book_title = document.createElement('div')
     book_title.classList.add('book_title')
-    book_title.innerHTML = obj.title
+
+    var span = document.createElement('span')
+    span.innerHTML = obj.title
+    book_title.appendChild(span)
 
     var book_author = document.createElement('div')
     book_author.classList.add('book_author')
