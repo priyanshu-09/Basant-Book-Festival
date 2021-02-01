@@ -1,6 +1,6 @@
-var url = window.location;
-console.log(url)
-var access_token = new URLSearchParams(url.search).get('access_token');
+var url_now = window.location;
+console.log(url_now)
+var access_token = new URLnowSearchParams(url_now.search).get('access_token');
 console.log(access_token)
 
 let publishers_arr = []
