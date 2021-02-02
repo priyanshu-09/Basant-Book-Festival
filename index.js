@@ -5,7 +5,24 @@ if(localStorage.getItem('name')!=undefined){
     document.getElementById('login_button').innerHTML = "Welcome "+localStorage.getItem('name')
 }
 
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 let publishers_arr = []
 
@@ -14,7 +31,7 @@ fetch("https://bbf.bits-pilani.ac.in/api/publisher/list/")
     .then(response => response.json())
     .then(data => {
         publishers_arr = data.data
-        shuffle(publishers_arr)
+        publishers_arr=shuffle(publishers_arr)
         populate_publilshers()
     })
     .catch(error => console.log('error', error));
@@ -105,3 +122,4 @@ function onSignIn(googleUser) {
     console.log(id_token)
     console.log('hi')
 }
+
