@@ -55,6 +55,7 @@ function orders() {
                             Final Price (After Discount)
                         </div>
     `
+    var total_amt = 0
     document.getElementsByClassName('items_container')[0].innerHTML = ''
     for (var i = 0; i < ordered_books.length; i++) {
         var div = document.createElement('div')
@@ -73,9 +74,10 @@ function orders() {
                                 ${ordered_books[i].expected_price}
                             </div>
         `
+        total_amt += ordered_books[i].expected_price
         document.getElementsByClassName('items_container')[0].appendChild(div)
     }
-
+    document.getElementsByClassName('final_price')[0].innerHTML = total_amt.toString()
     document.getElementsByClassName('orders')[0].style.opacity = '1'
     document.getElementsByClassName('orders')[0].style.transform = 'scale(1)'
     document.getElementsByClassName('recommended')[0].style.opacity = '0.4'
@@ -91,8 +93,11 @@ function recommended() {
                         <div class="headings seller">
                             Seller
                         </div>
-                        <div class="description">
-                            Description
+                        <div class="prices">
+                            Author
+                        </div>
+                        <div>
+                            Year of Publication
                         </div>
     `
     document.getElementsByClassName('items_container')[0].innerHTML = ''
@@ -106,11 +111,11 @@ function recommended() {
                             <div class="books_seller" onclick='location.href="all_books.html?id=${recommended_books[i].publisher_id}&name=${publishers_arr[(recommended_books[i].publisher_id) - 1].name}"'>
                                 ${publishers_arr[(recommended_books[i].publisher_id) - 1].name}
                             </div>
-                            <div class="books_old_price">
-                                ${recommended_books[i].price_indian_currency}
+                            <div class="books_author">
+                                ${recommended_books[i].author}
                             </div>
-                            <div class="books_new_price">
-                                ${recommended_books[i].expected_price}
+                            <div class=" books_year">
+                                ${recommended_books[i].year_of_publication}
                             </div>
         `
         document.getElementsByClassName('items_container')[0].appendChild(div)

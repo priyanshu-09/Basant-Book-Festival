@@ -149,10 +149,19 @@
     font-weight: bold !important;
 }
 
+.books_author {
+    width: 8vw;
+    height: 100%;
+}
+
 .books_new_price {
     height: 100%;
     color: #FF596B;
     font-weight: bold !important;
+}
+
+.books_year {
+    height: 100%;
 }
 
 .books_description {
