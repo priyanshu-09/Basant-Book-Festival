@@ -1,5 +1,5 @@
-if(localStorage.getItem('name')!=undefined){
-    document.getElementById('login_button').innerHTML = "Welcome "+localStorage.getItem('name')
+if(sessionStorage.getItem('name')!=undefined){
+    document.getElementById('login_button').innerHTML = "Welcome "+sessionStorage.getItem('name')
 }
 
 const params = new URLSearchParams(window.location.search)

@@ -1,8 +1,8 @@
 
 // var access_token = new URLSearchParams(url_now.search).get('access_token');
 // console.log(access_token)
-if (localStorage.getItem('name') != undefined) {
-    document.getElementById('login_button').innerHTML = "Welcome " + localStorage.getItem('name')
+if (sessionStorage.getItem('name') != undefined) {
+    document.getElementById('login_button').innerHTML = "Welcome " + sessionStorage.getItem('name')
 }
 
 function shuffle(array) {
@@ -119,7 +119,7 @@ function ready() {
     console.log(height_of_svg)
 
     document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
-    document.getElementsByClassName('landing_svg')[0].style.opacity='1'
+    document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
 }
 
 document.addEventListener("DOMContentLoaded", ready);
