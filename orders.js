@@ -21,12 +21,12 @@ var token = sessionStorage.getItem('token')
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer " + token);
 
-var formdata = new FormData();
+
 
 var requestOptions = {
     method: 'GET',
     headers: myHeaders,
-    body: formdata,
+
     redirect: 'follow'
 };
 
