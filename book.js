@@ -224,4 +224,3 @@ function yes_recommend() {
             .catch(error => console.log('error', error));
     }
 }
-}
