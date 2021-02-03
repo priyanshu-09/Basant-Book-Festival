@@ -119,6 +119,7 @@ body {
 .cart {
     height: 2.5vh;
     display: none;
+    cursor: pointer;
 }
 
 .cart_container {
