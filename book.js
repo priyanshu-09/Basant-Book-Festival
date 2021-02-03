@@ -193,7 +193,7 @@ function yes_buy() {
             .then(response => response.json())
             .then(result => {
                 console.log(result.message)
-                document.getElementById('pop_up').innerHTML = ''
+                document.getElementsByClassName('buttons_container')[0].innerHTML = ''
                 document.getElementById('pop_up_content').innerHTML = result.message
                 setTimeout(function () {
                     document.getElementById('pop_up').style.display = 'none'
@@ -232,7 +232,7 @@ function yes_recommend() {
             .then(response => response.json())
             .then(result => {
                 console.log(result.message)
-                document.getElementById('pop_up').innerHTML = ''
+                document.getElementsByClassName('buttons_container')[0].innerHTML = ''
                 document.getElementById('pop_up_content').innerHTML = result.message
                 setTimeout(function () {
                     document.getElementById('pop_up').style.display = 'none'
