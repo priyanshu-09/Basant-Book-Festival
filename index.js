@@ -3,7 +3,7 @@
 // console.log(access_token)
 if (sessionStorage.getItem('name') != undefined) {
     document.getElementById('login_button').innerHTML = "Welcome " + sessionStorage.getItem('name')
-    document.getElementsByClassName('cart')[0].style.display='block'
+    document.getElementsByClassName('cart')[0].style.display = 'block'
 }
 
 function shuffle(array) {
@@ -118,9 +118,17 @@ function ready() {
     }
     console.log(window.outerHeight)
     console.log(height_of_svg)
+    if (height_of_svg != 0) {
+        document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
+        document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
+    }
+    else {
+        setTimeout(function () {
+            document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
+            document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
+        }, 300)
+    }
 
-    document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
-    document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
 }
 
 document.addEventListener("DOMContentLoaded", ready);

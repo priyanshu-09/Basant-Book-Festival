@@ -1,6 +1,6 @@
-if(sessionStorage.getItem('name')!=undefined){
-    document.getElementById('login_button').innerHTML = "Welcome "+sessionStorage.getItem('name')
-    document.getElementsByClassName('cart')[0].style.display='block'
+if (sessionStorage.getItem('name') != undefined) {
+    document.getElementById('login_button').innerHTML = "Welcome " + sessionStorage.getItem('name')
+    document.getElementsByClassName('cart')[0].style.display = 'block'
 }
 
 const params = new URLSearchParams(window.location.search)
@@ -130,11 +130,11 @@ function Buy() {
          This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final purchase by you. On your confirmation, the vendor will issue a bill in your name to make the payment. Once the payment is made, you can collect the book from the Library.<br><br>
 Are you sure you want to continue ?
     `
-    document.getElementsByClassName('buttons_container')[0].innerHTML= `
+    document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">
                 Cancel
             </div>
-            <div class="button" onclick="yes_buy(${obj})">
+            <div class="button" onclick="yes_buy()">
                 Yes
             </div>
     `
@@ -149,11 +149,11 @@ function Recommend() {
 This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.<br><br>
 Are you sure you want to continue ?
     `
-    document.getElementsByClassName('buttons_container')[0].innerHTML= `
+    document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">
                 Cancel
             </div>
-            <div class="button" onclick="yes_recommend(${obj})">
+            <div class="button" onclick="yes_recommend()">
                 Yes
             </div>
     `
@@ -166,27 +166,27 @@ function cancel() {
     document.getElementById('pop_up_content').innerHTML = ''
 }
 
-function yes_buy(object){
-    console.log(object)
-    var token=sessionStorage.getItem('token')
+function yes_buy() {
+    console.log(obj)
+    var token = sessionStorage.getItem('token')
     console.log(token)
-    if(token==undefined){
+    if (token == undefined) {
         alert('Please Log in with your University ID first')
         cancel()
     }
-    else{
+    else {
 
     }
 }
-function yes_recommend(object){
-    console.log(object)
-    var token=sessionStorage.getItem('token')
+function yes_recommend() {
+    console.log(obj)
+    var token = sessionStorage.getItem('token')
     console.log(token)
-    if(token==undefined){
+    if (token == undefined) {
         alert('Please Log in with your University ID first')
         cancel()
     }
-    else{
+    else {
 
     }
 }
