@@ -175,7 +175,24 @@ function yes_buy() {
         cancel()
     }
     else {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer " + token);
 
+        var formdata = new FormData();
+        formdata.append("book_id", obj.id);
+        formdata.append("recommended", "False");
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: formdata,
+            redirect: 'follow'
+        };
+
+        fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
     }
 }
 function yes_recommend() {
@@ -187,6 +204,24 @@ function yes_recommend() {
         cancel()
     }
     else {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer " + token);
 
+        var formdata = new FormData();
+        formdata.append("book_id", obj.id);
+        formdata.append("recommended", "True");
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: formdata,
+            redirect: 'follow'
+        };
+
+        fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
     }
+}
 }
