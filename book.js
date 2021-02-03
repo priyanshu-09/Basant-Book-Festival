@@ -129,9 +129,9 @@ function Buy() {
     document.getElementsByClassName('wrapper')[0].style.opacity = '0'
 
     document.getElementById('pop_up_content').innerHTML = `
-        Thank you for selecting the book for your personal use. <br>
+        <b>Thank you for selecting the book for your personal use.</b> <br>
          This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final purchase by you. On your confirmation, the vendor will issue a bill in your name to make the payment. Once the payment is made, you can collect the book from the Library.<br><br>
-Are you sure you want to continue ?
+</b>Are you sure you want to continue ?</b>
     `
     document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">
@@ -148,9 +148,9 @@ function Recommend() {
     document.getElementsByClassName('wrapper')[0].style.opacity = '0'
 
     document.getElementById('pop_up_content').innerHTML = `
-        Thank you for recommending the book for the Library!<br>
+        <b>Thank you for recommending the book for the Library!</b><br>
 This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.<br><br>
-Are you sure you want to continue ?
+</b>Are you sure you want to continue ?</b>
     `
     document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">

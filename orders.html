@@ -20,7 +20,7 @@
 
 <body>
     <div class="fake_header"></div>
-   
+
     <img src="assets/bg_book.png" class="background">
     <div class="wrapper">
         <div class="header">
@@ -28,15 +28,71 @@
                 <div><img src="assets/logo.png" class="icon" onclick="location.href='index.html'"></div>
             </div>
             <div class="login_button_container">
-                <div id="login_button" class="button customGPlusSignIn" >
+                <div id="login_button" class="button customGPlusSignIn">
                     Login
                 </div>
 
             </div>
         </div>
 
-        <div class="order_container">
-            
+        <div class="orders_wrapper">
+            <div class="back_section">
+                <div class="back_button" onclick="history.back()">
+                    <img src="assets/arrow.png" class="arrow">
+                </div>
+            </div>
+            <div class="orders_container">
+                <div class="orders_heading">
+                    <div class="orders">
+                        Orders
+                    </div>
+                    <div class="recommended">
+                        Recommended
+                    </div>
+                </div>
+                <div class="ordered_books_container">
+                    <div class="headings_container">
+                        <div class="headings items">
+                            Items
+                        </div>
+                        <div class="headings seller">
+                            Seller
+                        </div>
+                        <div class="prices">
+                            Original Price
+                        </div>
+                        <div>
+                            Final Price (After Discount)
+                        </div>
+                    </div>
+                    <div class="items_container">
+                        <div class="books">
+                            <div class="books_items">
+                                <div>
+                                    <img src="assets/book_cover.png" class="books_img">
+
+                                </div>
+                                <div class="book_title">
+                                    Think and grow rich
+                                </div>
+                            </div>
+                            <div class="books_sellers">
+                                ABD
+                            </div>
+                            <div class="books_old_price">
+                                699
+                            </div>
+                            <div class="books_new_price">
+                                599
+                            </div>
+                        </div>
+                    </div>
+                    <div class="final_price_container">
+                        Subtotal
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -1,0 +1,111 @@
+.login_button_container {
+    width: 20vw;
+}
+
+#login_button {
+    display: none;
+}
+
+.orders_wrapper {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.back_section {
+    width: 100vw;
+}
+
+.orders_container {
+    margin-top: 5vh;
+    width: 70vw;
+    margin-left: 11vw;
+    height: 70vh;
+    background: rgba(250, 250, 250, 0.5);
+    /* opacity: 0.3; */
+    backdrop-filter: blur(3px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 30px;
+    padding: 2.5vh 4vw 2.5vh 4vw;
+}
+
+.orders_heading {
+    width: 62vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.orders, .recommended {
+    font-size: 2em;
+    font-weight: bold;
+    color: #3d429c;
+    cursor: pointer;
+    margin-right: 3vw;
+}
+
+.ordered_books_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.headings_container {
+    width: 100%;
+    display: flex;
+    margin-top: 2vh;
+}
+
+.headings {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.items {
+    width: 25vw;
+}
+
+.seller {
+    width: 15vw;
+}
+
+.prices {
+    width: 10vw;
+}
+
+.items_container {
+    border-top: 0.5px solid gray;
+    border-bottom: 0.5px solid gray;
+    height: 70%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.books {
+    width: 100%;
+    height: 20vh;
+    border-top: 0.5px solid gray;
+    border-bottom: 0.5px solid gray;
+    display: flex;
+}
+
+.books_items {
+    height: 20vh;
+    width: 25vw;
+    padding: 2vh 2vw 2vh 2vw;
+    display: flex;
+}
+
+.books_img {
+    height: 16vh;
+    border-radius: 10px;
+    margin-right: 3vw;
+}
+.books_title{
+
+}
+
+.final_price_container {
+    width: 100%;
+    align-items: right;
+}
