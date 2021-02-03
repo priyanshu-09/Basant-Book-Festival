@@ -190,15 +190,17 @@ function yes_buy() {
         };
 
         fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => {
+                console.log(result.message)
+                document.getElementById('pop_up').innerHTML = ''
                 document.getElementById('pop_up_content').innerHTML = result.message
                 setTimeout(function () {
                     document.getElementById('pop_up').style.display = 'none'
                     document.getElementsByClassName('wrapper')[0].style.opacity = '1'
 
                     document.getElementById('pop_up_content').innerHTML = ''
-                }, 1000)
+                }, 1500)
             })
             .catch(error => console.log('error', error));
     }
@@ -227,15 +229,17 @@ function yes_recommend() {
         };
 
         fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => {
+                console.log(result.message)
+                document.getElementById('pop_up').innerHTML = ''
                 document.getElementById('pop_up_content').innerHTML = result.message
                 setTimeout(function () {
                     document.getElementById('pop_up').style.display = 'none'
                     document.getElementsByClassName('wrapper')[0].style.opacity = '1'
 
                     document.getElementById('pop_up_content').innerHTML = ''
-                }, 1000)
+                }, 1500)
             })
             .catch(error => console.log('error', error));
     }
