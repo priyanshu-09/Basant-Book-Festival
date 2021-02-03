@@ -129,6 +129,14 @@ function Buy() {
          This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final purchase by you. On your confirmation, the vendor will issue a bill in your name to make the payment. Once the payment is made, you can collect the book from the Library.<br><br>
 Are you sure you want to continue ?
     `
+    document.getElementsByClassName('buttons_container')[0].innerHTML= `
+        <div class="button_inverse" onclick="cancel()">
+                Cancel
+            </div>
+            <div class="button" onclick="yes_buy(${obj})">
+                Yes
+            </div>
+    `
 }
 function Recommend() {
 
@@ -140,7 +148,14 @@ function Recommend() {
 This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.<br><br>
 Are you sure you want to continue ?
     `
-
+    document.getElementsByClassName('buttons_container')[0].innerHTML= `
+        <div class="button_inverse" onclick="cancel()">
+                Cancel
+            </div>
+            <div class="button" onclick="yes_recommend(${obj})">
+                Yes
+            </div>
+    `
 }
 
 function cancel() {
@@ -148,4 +163,29 @@ function cancel() {
     document.getElementsByClassName('wrapper')[0].style.opacity = '1'
 
     document.getElementById('pop_up_content').innerHTML = ''
+}
+
+function yes_buy(object){
+    console.log(object)
+    var token=sessionStorage.getItem('token')
+    console.log(token)
+    if(token==undefined){
+        alert('Please Log in with your University ID first')
+        cancel()
+    }
+    else{
+
+    }
+}
+function yes_recommend(object){
+    console.log(object)
+    var token=sessionStorage.getItem('token')
+    console.log(token)
+    if(token==undefined){
+        alert('Please Log in with your University ID first')
+        cancel()
+    }
+    else{
+
+    }
 }

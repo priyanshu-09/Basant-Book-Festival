@@ -1,27 +1,27 @@
 
 // var access_token = new URLSearchParams(url_now.search).get('access_token');
 // console.log(access_token)
-if(localStorage.getItem('name')!=undefined){
-    document.getElementById('login_button').innerHTML = "Welcome "+localStorage.getItem('name')
+if (localStorage.getItem('name') != undefined) {
+    document.getElementById('login_button').innerHTML = "Welcome " + localStorage.getItem('name')
 }
 
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+    var currentIndex = array.length, temporaryValue, randomIndex;
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
 
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
 
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
 
-  return array;
+    return array;
 }
 
 let publishers_arr = []
@@ -31,7 +31,7 @@ fetch("https://bbf.bits-pilani.ac.in/api/publisher/list/")
     .then(response => response.json())
     .then(data => {
         publishers_arr = data.data
-        publishers_arr=shuffle(publishers_arr)
+        publishers_arr = shuffle(publishers_arr)
         populate_publilshers()
     })
     .catch(error => console.log('error', error));
@@ -98,6 +98,11 @@ function create_stalls(obj, x) {
 }
 
 setTimeout(function () {
+
+}, 500)
+
+
+function ready() {
     var height_of_svg = document.getElementsByClassName('landing_svg')[0].offsetHeight
     var percent_on_hero_section
     console.log('window width', window.innerWidth)
@@ -114,8 +119,10 @@ setTimeout(function () {
     console.log(height_of_svg)
 
     document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
-}, 500)
+    document.getElementsByClassName('landing_svg')[0].style.opacity='1'
+}
 
+document.addEventListener("DOMContentLoaded", ready);
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;

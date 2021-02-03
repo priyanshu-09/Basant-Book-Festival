@@ -51,9 +51,9 @@ function authenticate(id_token) {
     fetch("https://bbf.bits-pilani.ac.in/api/auth/authenticate/", requestOptions)
         .then(response => response.json())
         .then(result => {
-            localStorage.clear();
-            localStorage.setItem("token", result.token);
-            localStorage.setItem("name",result.first_name)
+            sessionStorage.clear();
+            sessionStorage.setItem("token", result.token);
+            sessionStorage.setItem("name",result.first_name)
         })
         .catch(error => alert(error));
 

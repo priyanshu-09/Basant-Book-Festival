@@ -168,6 +168,8 @@ body {
     left: 0;
     width: 100vw;
     right: 0;
+    opacity: 0;
+    transition: all 0.2s ease;
     /* transform: scaleY(.75); */
 }
 
@@ -437,14 +439,14 @@ body {
 
 .contact_us_heading {
     font-size: 1.6em;
-    width: 30vw;
+    width: 20vw;
     font-weight: normal;
     margin-bottom: 3vh;
 }
 
 .contact_us_links_container {
     margin-bottom: 1vh;
-    width: 30vw;
+    width: 20vw;
     display: flex;
 }
 
@@ -466,11 +468,13 @@ body {
     .logo {
         width: max-content;
         padding-left: 3vw;
+        margin-top: 1vh;
     }
     .login_button_container {
         padding-right: 5vw;
-        padding-top: 1vh;
+        /* padding-top: 1vh; */
         max-width: 50vw;
+        margin-top: 2.5vh;
     }
     .main_heading {
         width: 100vw;
@@ -485,6 +489,7 @@ body {
     }
     .big_icon {
         margin-top: 3vh;
+        height: 15vh;
     }
     .date {
         width: 100vw;
@@ -495,5 +500,51 @@ body {
     }
     .about {
         display: block;
+    }
+    .publishers_heading {
+        font-size: 1em;
+        line-height: 20px;
+        padding: 2vh 3.5vw 1.5vh 3.5vw;
+    }
+    .publishers_grid_container {
+        justify-content: flex-start;
+        /* padding-top: vh; */
+    }
+    .stalls {
+        height: 22vw;
+    }
+    .stalls_image {
+        height: 21vw;
+        width: 21vw;
+    }
+    .stalls_heading {
+        font-size: 1em;
+    }
+    .footer_links a {
+        margin-right: 3vw;
+    }
+    .copyright {
+        width: 40vw;
+        font-weight: lighter;
+        font-size: 0.7em;
+        margin-top: 3vh;
+        margin-left: 10vw;
+        line-height: 15px;
+    }
+    .left_footer {
+        margin-left: 5vw;
+    }
+    .right_footer {
+        width: 40vw;
+    }
+    .contact_us_heading {
+        font-size: 1.3em;
+        width: 40vw;
+    }
+    .contact_us_links_container {
+        width: 40vw;
+    }
+    .contact_us_links_container a {
+        font-size: 0.9em;
     }
 }
