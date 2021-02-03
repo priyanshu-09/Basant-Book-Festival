@@ -3,6 +3,7 @@
 // console.log(access_token)
 if (sessionStorage.getItem('name') != undefined) {
     document.getElementById('login_button').innerHTML = "Welcome " + sessionStorage.getItem('name')
+    document.getElementsByClassName('cart')[0].style.display='block'
 }
 
 function shuffle(array) {

@@ -1,5 +1,6 @@
-if(sessionStorage.getItem('name')!=undefined){
-    document.getElementById('login_button').innerHTML = "Welcome "+sessionStorage.getItem('name')
+if (sessionStorage.getItem('name') != undefined) {
+    document.getElementById('login_button').innerHTML = "Welcome " + sessionStorage.getItem('name')
+    document.getElementsByClassName('cart')[0].style.display = 'block'
 }
 
 const params = new URLSearchParams(window.location.search)

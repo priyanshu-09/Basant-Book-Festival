@@ -19,6 +19,7 @@ function attachSignin(element) {
             onSignIn(googleUser)
             document.getElementById('login_button').innerHTML = "Welcome " +
                 googleUser.getBasicProfile().getGivenName();
+            document.getElementsByClassName('cart')[0].style.display='block'
         }, function (error) {
             alert(JSON.stringify(error, undefined, 2));
         });

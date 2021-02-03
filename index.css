@@ -116,6 +116,19 @@ body {
     padding-right: 2vw;
 }
 
+.cart {
+    height: 2.5vh;
+    display: none;
+}
+
+.cart_container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2vw;
+}
+
 .button, .button_inverse {
     display: flex;
     flex-direction: row;
