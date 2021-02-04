@@ -250,7 +250,7 @@ function title(input) {
     }
 }
 function search_by_title(input) {
-    input.title.includes(document.getElementsByClassName('search_bar')[0].value)
+    return input.title.includes(document.getElementsByClassName('search_bar')[0].value)
 }
 
 function author(input) {
@@ -264,11 +264,11 @@ function author(input) {
     }
 }
 function search_by_author(input) {
-    input.author.includes(document.getElementsByClassName('search_bar')[1].value)
+    return input.author.includes(document.getElementsByClassName('search_bar')[1].value)
 }
 
 function subject(input) {
-    var value = document.getElementsByClassName('search_bar')[1].value
+    var value = document.getElementsByClassName('subject_heading')[0].innerHTML
     if (value == 'Subjects' || value == '') {
         return input
     }
@@ -278,5 +278,5 @@ function subject(input) {
     }
 }
 function search_by_subject(input) {
-    input.subject.includes(document.getElementsByClassName('search_bar')[1].value)
+    return input.subject.includes(document.getElementsByClassName('subject_heading')[0].innerHTML)
 }
