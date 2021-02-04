@@ -178,7 +178,7 @@ function populate_subjects() {
         redirect: 'follow'
     };
 
-    fetch("bbf.bits-pilani.ac.in/api/book/subjects/all/", requestOptions)
+    fetch("https://bbf.bits-pilani.ac.in/api/book/subjects/all/", requestOptions)
         .then(response => response.json())
         .then(result => {
             subjects_arr = result.data
