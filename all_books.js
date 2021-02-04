@@ -58,6 +58,7 @@ document.getElementsByClassName('next')[0].style.display = 'flex'
 
 
 function paginate() {
+    total_books = working_arr.length;
     console.log(working_arr)
     document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
     document.getElementsByClassName('books_flexbox')[1].innerHTML = ''

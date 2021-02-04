@@ -85,6 +85,8 @@
     width: 16vw;
     padding-left: 0;
     font-weight: bold;
+    font-size: 0.8em;
+    padding: 0 2vw 0 2vw;
 }
 
 .subjects_dropdown_container {
