@@ -58,7 +58,7 @@ document.getElementsByClassName('next')[0].style.display = 'flex'
 
 
 function paginate() {
-    total_books = working_arr.length;
+    
     console.log(working_arr)
     document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
     document.getElementsByClassName('books_flexbox')[1].innerHTML = ''
@@ -237,6 +237,13 @@ function apply() {
     working_arr = author(working_arr)
     working_arr = subject(working_arr)
 
+    total_books = working_arr.length;
+    document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
+    if (total_books < 9) {
+        document.getElementsByClassName('next')[0].style.display = 'none'
+        console.log('hi')
+    }
+    document.getElementsByClassName('prev')[0].style.display='none'
     current_page_number = 1
     paginate()
     close_filter()
@@ -285,15 +292,15 @@ function search_by_subject(input) {
     return input.subject.includes(document.getElementsByClassName('subject_heading')[0].innerHTML)
 }
 
-function clear(){
-    document.getElementsByClassName('search_bar')[0].value='Title'
-    document.getElementsByClassName('search_bar')[1].value='Author'
-    document.getElementsByClassName('subject_heading')[0].innerHTML='Subjects'
+function clear() {
+    document.getElementsByClassName('search_bar')[0].value = 'Title'
+    document.getElementsByClassName('search_bar')[1].value = 'Author'
+    document.getElementsByClassName('subject_heading')[0].innerHTML = 'Subjects'
 }
 
-function clear_title(){
-    document.getElementsByClassName('search_bar')[0].value=''
+function clear_title() {
+    document.getElementsByClassName('search_bar')[0].value = ''
 }
-function clear_author(){
-    document.getElementsByClassName('search_bar')[1].value=''
+function clear_author() {
+    document.getElementsByClassName('search_bar')[1].value = ''
 }
