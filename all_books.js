@@ -225,8 +225,13 @@ function filter_button() {
 function close_filter() {
     document.getElementsByClassName('filter_menu')[0].style.display = 'none'
     document.getElementsByClassName('books_container')[0].style.display = 'flex'
-    document.getElementsByClassName('next')[0].style.display = 'flex'
-    document.getElementsByClassName('prev')[0].style.display = 'flex'
+    if (total_books < 9) {
+        document.getElementsByClassName('next')[0].style.display = 'none'
+        console.log('hi')
+    }
+    else{
+        document.getElementsByClassName('next')[0].style.display ='flex'
+    }
     document.getElementsByClassName('dropdown_menu')[0].style.display = 'none'
 }
 

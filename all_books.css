@@ -352,6 +352,6 @@
     font-weight: 300;
     font-size: 0.6em;
     height: 100%;
-    line-height: 26px;
+    /* line-height: 26px; */
     color: #3C3C3C;
 }
