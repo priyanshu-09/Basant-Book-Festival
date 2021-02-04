@@ -46,13 +46,13 @@
     width: 20vw;
     position: absolute;
     left: 40vw;
-    top: 25vh;
+    top: 30vh;
     z-index: 2;
     background: rgba(250, 250, 250, 0.5);
     backdrop-filter: blur(3px);
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -89,8 +89,7 @@
 
 .subjects_dropdown_container {
     width: 16vw;
-    height: 5vh;
-    overflow-y: visible;
+    height: max-content;
     z-index: 2;
     align-items: center;
     justify-content: flex-start;
@@ -117,22 +116,26 @@
 .dropdown_menu {
     height: max-content;
     width: max-content;
-    z-index: 3;
+    max-height: 30vh;
     border-radius: 10px;
     background-color: white;
     color: #3D429C;
-    display: flex;
+    display: none;
+    overflow-y: scroll;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 1vh;
+    z-index: 3;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .subjects {
-    padding: 2vh 2vw 2vh 2vw;
     font-size: 0.8em;
+    margin: 1vh 1vw 1vh 1vw;
     cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
 
 .drop_icon {
@@ -148,7 +151,10 @@
 
 .button_container {
     display: flex;
+    position: fixed;
+    top: 35vh;
     justify-content: space-around;
+    width: 16vw;
     padding-top: 2vh;
 }
 

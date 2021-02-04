@@ -32,7 +32,7 @@
     <div class="filter_menu">
         <div class="close_button_container">
             <div>
-                <img src='assets/close.png' class="close_button">
+                <img src='assets/close.png' class="close_button" onclick="close_filter()">
             </div>
         </div>
         <div class="content">
@@ -48,8 +48,8 @@
                     <div style="display: flex; justify-content: center; align-items: center;"><img
                             src="assets/drop_icon.png" class="drop_icon"></div>
                 </div>
-                <div class="dropdown_menu">
-                    <div class="subjects">
+                <div class="dropdown_menu" style="display: none;">
+                    <div class="subjects" onclick="subject_select('abcde')">
                         ABCDE
                     </div>
                     <div class="subjects">
@@ -98,7 +98,7 @@
                     <img src="assets/arrow.png" class="arrow">
                 </div>
                 <div class="filter_section">
-                    <div class="button_inverse">
+                    <div class="button_inverse" onclick="filter_button()">
                         Filters
                     </div>
                 </div>

@@ -16,8 +16,8 @@ for (const param of params) {
         name_of_publisher = param[1]
     }
 }
-
-let whole_books_arr = []
+let whole_books_array = []
+let working_arr = []
 let current_page_number = 1
 let total_books = 0
 
@@ -38,8 +38,9 @@ fetch("https://bbf.bits-pilani.ac.in/api/book/filter/fs/publisher/", requestOpti
     .then(response => response.json())
     .then(result => {
         console.log(result.data)
-        whole_books_arr = result.data;
-        total_books = whole_books_arr.length;
+        working_arr = result.data;
+        whole_books_array = working_arr
+        total_books = working_arr.length;
         document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
         if (total_books < 9) {
             document.getElementsByClassName('next')[0].style.display = 'none'
@@ -57,25 +58,26 @@ document.getElementsByClassName('next')[0].style.display = 'flex'
 
 
 function paginate() {
+    console.log(working_arr)
     document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
     document.getElementsByClassName('books_flexbox')[1].innerHTML = ''
     for (var i = (8 * (current_page_number - 1)); i < 8 * current_page_number; i++) {
         if (i == total_books - 1) {
             if (i - (8 * (current_page_number - 1)) < 4) {
 
-                populate_books(whole_books_arr[i], 0)
+                populate_books(working_arr[i], 0)
             }
             else {
-                populate_books(whole_books_arr[i], 1)
+                populate_books(working_arr[i], 1)
             }
             break
         }
         if (i - (8 * (current_page_number - 1)) < 4) {
 
-            populate_books(whole_books_arr[i], 0)
+            populate_books(working_arr[i], 0)
         }
         else {
-            populate_books(whole_books_arr[i], 1)
+            populate_books(working_arr[i], 1)
         }
     }
 }
@@ -188,7 +190,7 @@ function populate_subjects() {
                 var div = document.createElement('div')
                 div.classList.add('subjects')
                 var onclick = document.createAttribute('onclick')
-                onclick.value = `subject_select(${subjects_arr[i]})`
+                onclick.value = `subject_select(${subjects_arr[i].toSting()})`
                 div.innerHTML = subjects_arr[i]
                 div.setAttributeNode(onclick)
                 document.getElementsByClassName('dropdown_menu')[0].appendChild(div)
@@ -199,16 +201,82 @@ function populate_subjects() {
 
 
 }
+function dropdown() {
+    if (document.getElementsByClassName('dropdown_menu')[0].style.display == 'none') {
+        document.getElementsByClassName('dropdown_menu')[0].style.display = 'flex'
+    }
+    else {
+        document.getElementsByClassName('dropdown_menu')[0].style.display = 'none'
+    }
+
+}
+function subject_select(input) {
+    document.getElementsByClassName('dropdown_menu')[0].style.display = 'none'
+    document.getElementsByClassName('subject_heading')[0].innerHTML = input
+}
 
 function filter_button() {
-    document.getElementsByClassName('dropdown-menu')[0].classList.add('show')
-    var x_placement = document.createAttribute('x-placement')
-    x_placement.value = "right-start"
-    var style = document.createAttribute('style')
-    style.value = "position: relative;"
-    document.getElementsByClassName('dropdown-menu')[0].setAttributeNode(x_placement)
-    document.getElementsByClassName('dropdown-menu')[0].setAttributeNode(style)
+    document.getElementsByClassName('filter_menu')[0].style.display = 'flex'
+    document.getElementsByClassName('books_container')[0].style.display = 'none'
+    document.getElementsByClassName('next')[0].style.display = 'none'
+    document.getElementsByClassName('prev')[0].style.display = 'none'
 }
 function close_filter() {
+    document.getElementsByClassName('filter_menu')[0].style.display = 'none'
+    document.getElementsByClassName('books_container')[0].style.display = 'flex'
+    document.getElementsByClassName('next')[0].style.display = 'flex'
+    document.getElementsByClassName('prev')[0].style.display = 'flex'
+    document.getElementsByClassName('dropdown_menu')[0].style.display = 'none'
+}
 
+function apply() {
+    working_arr = whole_books_array
+
+    working_arr = title()
+    working_arr = author()
+    working_arr = subject()
+
+    current_page_number = 1
+    paginate()
+}
+function title(input) {
+    var value = document.getElementsByClassName('search_bar')[0].value
+    if (value == 'Title' || value == '') {
+        return input
+    }
+    else {
+        var new_array = input.filter(search_by_title)
+        return new_array
+    }
+}
+function search_by_title(input) {
+    input.title.includes(document.getElementsByClassName('search_bar')[0].value)
+}
+
+function author(input) {
+    var value = document.getElementsByClassName('search_bar')[1].value
+    if (value == 'Author' || value == '') {
+        return input
+    }
+    else {
+        var new_array = input.filter(search_by_author)
+        return new_array
+    }
+}
+function search_by_author(input) {
+    input.author.includes(document.getElementsByClassName('search_bar')[1].value)
+}
+
+function subject(input) {
+    var value = document.getElementsByClassName('search_bar')[1].value
+    if (value == 'Subjects' || value == '') {
+        return input
+    }
+    else {
+        var new_array = input.filter(search_by_subject)
+        return new_array
+    }
+}
+function search_by_subject(input) {
+    input.subject.includes(document.getElementsByClassName('search_bar')[1].value)
 }
