@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="all_books.css">
     <link rel="icon" href="assets/icon.png">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <meta name="google-signin-scope" content="profile email">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/api:client.js"></script>
@@ -26,10 +29,58 @@
     <div class="prev button_inverse" onclick="prev()">
         Prev Page
     </div>
+    <div class="filter_menu">
+        <div class="close_button_container">
+            <div>
+                <img src='assets/close.png' class="close_button">
+            </div>
+        </div>
+        <div class="content">
+            <div class="search_bar_container">
+                <input type="text" class="search_bar" value="Title">
+            </div>
+            <div class="search_bar_container">
+                <input type="text" class="search_bar" value="Author">
+            </div>
+            <div class="subjects_dropdown_container">
+                <div class="dropdown" onclick='dropdown()'>
+                    <div class="subject_heading">Subjects</div>
+                    <div style="display: flex; justify-content: center; align-items: center;"><img
+                            src="assets/drop_icon.png" class="drop_icon"></div>
+                </div>
+                <div class="dropdown_menu">
+                    <div class="subjects">
+                        ABCDE
+                    </div>
+                    <div class="subjects">
+                        ABCDEadffgrwgregarweg
+                    </div>
+                    <div class="subjects">
+                        ABCDE
+                    </div>
+                    <div class="subjects">
+                        ABCDE
+                    </div>
+                </div>
+            </div>
+            <div class="button_container">
+                <div class="button_inverse">
+                    Clear
+                </div>
+                <div class="button">
+                    Apply
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="wrapper">
         <div class="header">
             <div class="logo">
                 <div><img src="assets/logo.png" class="icon" onclick="location.href='index.html'"></div>
+                <!-- <div>
+                    <img src="assets/companyBranding.gif" class="lead_achieve" onclick="location.href='index.html'">
+                </div> -->
             </div>
             <div class="login_button_container">
                 <div class="cart_container">
@@ -46,214 +97,45 @@
                 <div class="back_button" onclick="history.back()">
                     <img src="assets/arrow.png" class="arrow">
                 </div>
-                <div>
-                    <input type="text" class="search_bar" value="Search for Books...">
+                <div class="filter_section">
+                    <div class="button_inverse">
+                        Filters
+                    </div>
                 </div>
+                <!-- <div class="btn-group dropright ">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" onclick="filter_button()">
+                        Filters
+                    </button>
+                    <div class="dropdown-menu ">
+                        // Dropdown menu links 
+                        <div class="search_bar_container">
+                            <input type="text" class="search_bar" value="Title">
+                        </div>
+                        <div class="search_bar_container">
+                            <input type="text" class="search_bar" value="Author">
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Subjects
+                            </button>
+                            <div class="dropdown-menu">
+                                <div class="subjects_list">Hi</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
             </div>
             <div class="rest_container">
-                <div class="all_books_heading">Arjun Das & Sons</div>
+                <div class="all_books_heading"></div>
                 <div class="books_container">
                     <div class="books_flexbox">
 
 
-                        <div class="book_card" onclick="location.href='book.html'">
-                            <div class="book_img_container">
-                                <img src="assets/book_cover.png" class="book_img">
-                            </div>
-                            <div class="book_text">
-                                <div class="book_title marquee">
-                                    <span></span>
-                                </div>
-                                <div class="book_author">
-                                    Napoleon Hill
-                                </div>
-                                <div class="book_price_container">
-                                    <div class="new_price">
-                                        &#8377 599
-                                    </div>
-                                    <div class="old_price">
-                                        &#8377 699
-                                    </div>
-                                    <div class="discount">
-                                        Save 25%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="book_card" onclick="location.href='book.html'">
-                            <div class='book_img_container'>
-                                <img src="assets/book_cover.png" class="book_img">
-                            </div>
-                            <div class="book_text">
-                                <div class="book_title">
-                                    Think and Grow Rich
-                                </div>
-                                <div class="book_author">
-                                    Napoleon Hill
-                                </div>
-                                <div class="book_price_container">
-                                    <div class="new_price">
-                                        &#8377 599
-                                    </div>
-                                    <div class="old_price">
-                                        &#8377 699
-                                    </div>
-                                    <div class="discount">
-                                        Save 25%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="book_card" onclick="location.href='book.html'">
-                            <div class='book_img_container'>
-                                <img src="assets/book_cover.png" class="book_img">
-                            </div>
-                            <div class="book_text">
-                                <div class="book_title">
-                                    Think and Grow Rich
-                                </div>
-                                <div class="book_author">
-                                    Napoleon Hill
-                                </div>
-                                <div class="book_price_container">
-                                    <div class="new_price">
-                                        &#8377 599
-                                    </div>
-                                    <div class="old_price">
-                                        &#8377 699
-                                    </div>
-                                    <div class="discount">
-                                        Save 25%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="book_card" onclick="location.href='book.html'">
-                            <div class='book_img_container'>
-                                <img src="assets/book_cover.png" class="book_img">
-                            </div>
-                            <div class="book_text">
-                                <div class="book_title">
-                                    Think and Grow Rich
-                                </div>
-                                <div class="book_author">
-                                    Napoleon Hill
-                                </div>
-                                <div class="book_price_container">
-                                    <div class="new_price">
-                                        &#8377 599
-                                    </div>
-                                    <div class="old_price">
-                                        &#8377 699
-                                    </div>
-                                    <div class="discount">
-                                        Save 25%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
                     </div>
                     <div class="books_flexbox">
-
-
-                        <div class="book_card" onclick="location.href='book.html'">
-                            <div class='book_img_container'>
-                                <img src="assets/book_cover.png" class="book_img">
-                            </div>
-                            <div class="book_text">
-                                <div class="book_title">
-                                    Think and Grow Rich
-                                </div>
-                                <div class="book_author">
-                                    Napoleon Hill
-                                </div>
-                                <div class="book_price_container">
-                                    <div class="new_price">
-                                        &#8377 599
-                                    </div>
-                                    <div class="old_price">
-                                        &#8377 699
-                                    </div>
-                                    <div class="discount">
-                                        Save 25%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="book_card" onclick="location.href='book.html'">
-                            <div class='book_img_container'>
-                                <img src="assets/book_cover.png" class="book_img">
-                            </div>
-                            <div class="book_text">
-                                <div class="book_title">
-                                    Think and Grow Rich
-                                </div>
-                                <div class="book_author">
-                                    Napoleon Hill
-                                </div>
-                                <div class="book_price_container">
-                                    <div class="new_price">
-                                        &#8377 599
-                                    </div>
-                                    <div class="old_price">
-                                        &#8377 699
-                                    </div>
-                                    <div class="discount">
-                                        Save 25%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="book_card" onclick="location.href='book.html'">
-                            <div class='book_img_container'>
-                                <img src="assets/book_cover.png" class="book_img">
-                            </div>
-                            <div class="book_text">
-                                <div class="book_title">
-                                    Think and Grow Rich
-                                </div>
-                                <div class="book_author">
-                                    Napoleon Hill
-                                </div>
-                                <div class="book_price_container">
-                                    <div class="new_price">
-                                        &#8377 599
-                                    </div>
-                                    <div class="old_price">
-                                        &#8377 699
-                                    </div>
-                                    <div class="discount">
-                                        Save 25%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="book_card" onclick="location.href='book.html'">
-                            <div class='book_img_container'>
-                                <img src="assets/book_cover.png" class="book_img">
-                            </div>
-                            <div class="book_text">
-                                <div class="book_title">
-                                    Think and Grow Rich
-                                </div>
-                                <div class="book_author">
-                                    Napoleon Hill
-                                </div>
-                                <div class="book_price_container">
-                                    <div class="new_price">
-                                        &#8377 599
-                                    </div>
-                                    <div class="old_price">
-                                        &#8377 699
-                                    </div>
-                                    <div class="discount">
-                                        Save 25%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
                     </div>
@@ -264,5 +146,14 @@
 </body>
 <script src="all_books.js"></script>
 <script src="login.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
 </html>

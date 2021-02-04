@@ -40,12 +40,13 @@ fetch("https://bbf.bits-pilani.ac.in/api/book/filter/fs/publisher/", requestOpti
         console.log(result.data)
         whole_books_arr = result.data;
         total_books = whole_books_arr.length;
-        document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher
+        document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
         if (total_books < 9) {
             document.getElementsByClassName('next')[0].style.display = 'none'
             console.log('hi')
         }
         paginate()
+        populate_subjects()
     })
     .catch(error => console.log('error', error));
 
@@ -164,4 +165,47 @@ function prev() {
 
     }
     paginate()
+}
+
+
+
+
+function populate_subjects() {
+    var subjects_arr = []
+    document.getElementsByClassName('dropdown_menu')[0].innerHTML = ''
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    fetch("bbf.bits-pilani.ac.in/api/book/subjects/all/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            subjects_arr = result.data
+
+            for (var i = 0; i < subjects_arr.length; i++) {
+                document.getElementsByClassName('dropdown_menu')[0].innerHTML += `
+                    <div class="subjects" onclick='select_subject(${subjects_arr[i]})'>
+                        ${subjects_arr[i]}
+                    </div>
+                `
+            }
+        })
+        .catch(error => console.log('error', error));
+
+
+
+}
+
+function filter_button() {
+    document.getElementsByClassName('dropdown-menu')[0].classList.add('show')
+    var x_placement = document.createAttribute('x-placement')
+    x_placement.value = "right-start"
+    var style = document.createAttribute('style')
+    style.value = "position: relative;"
+    document.getElementsByClassName('dropdown-menu')[0].setAttributeNode(x_placement)
+    document.getElementsByClassName('dropdown-menu')[0].setAttributeNode(style)
+}
+function close_filter() {
+
 }

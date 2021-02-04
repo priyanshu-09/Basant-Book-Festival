@@ -62,7 +62,7 @@ function orders() {
         div.classList.add('books')
         div.innerHTML = `
             <div class="books_title" onclick='location.href="${ordered_books[i].link}"'>
-                                1. ${ordered_books[i].title}
+                                ${i + 1}. ${ordered_books[i].title}
                             </div>
                             <div class="books_seller" onclick='location.href="all_books.html?id=${ordered_books[i].publisher_id}&name=${publishers_arr[(ordered_books[i].publisher_id) - 1].name}"'>
                                 ${publishers_arr[(ordered_books[i].publisher_id) - 1].name}
@@ -106,7 +106,7 @@ function recommended() {
         div.classList.add('books')
         div.innerHTML = `
             <div class="books_title" onclick='location.href="${recommended_books[i].link}"'>
-                                1. ${recommended_books[i].title}
+                                ${i + 1}. ${recommended_books[i].title}
                             </div>
                             <div class="books_seller" onclick='location.href="all_books.html?id=${recommended_books[i].publisher_id}&name=${publishers_arr[(recommended_books[i].publisher_id) - 1].name}"'>
                                 ${publishers_arr[(recommended_books[i].publisher_id) - 1].name}

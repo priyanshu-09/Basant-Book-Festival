@@ -75,16 +75,17 @@ body {
 
 .logo {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     /* width: 173px;
     height: 20px; */
-    width: 20vw;
-    height: 10vh;
-    left: 0px;
+    width: max-content;
+    height: max-content;
+    left: 2vw;
     top: 26px;
-    cursor: pointer;
+    padding-top: 1vh;
+    padding-left: 2vw;
 }
 
 .icon {
@@ -92,6 +93,12 @@ body {
     left: 5vw;
     top: 1vh;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.lead_achieve {
+    width: 9vw;
+    cursor: pointer;
 }
 
 .icon_name {
