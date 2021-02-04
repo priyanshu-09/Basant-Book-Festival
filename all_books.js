@@ -190,7 +190,7 @@ function populate_subjects() {
                 var div = document.createElement('div')
                 div.classList.add('subjects')
                 var onclick = document.createAttribute('onclick')
-                onclick.value = `subject_select(${subjects_arr[i].toSting()})`
+                onclick.value = `subject_select('${subjects_arr[i]}')`
                 div.innerHTML = subjects_arr[i]
                 div.setAttributeNode(onclick)
                 document.getElementsByClassName('dropdown_menu')[0].appendChild(div)
@@ -230,10 +230,7 @@ function close_filter() {
 }
 
 function apply() {
-    working_arr = [{ title: 'highj', author: 'abcd', subject: 'Mech' },
-    { title: 'abcd', author: 'abcddddwddd', subject: 'abcde' },
-    { title: 'jooksd', author: 'pqr', subject: 'Chem' }]
-
+    working_arr = whole_books_array
     working_arr = title(working_arr)
 
     working_arr = author(working_arr)
