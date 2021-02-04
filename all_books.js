@@ -246,6 +246,7 @@ function title(input) {
     }
     else {
         var new_array = input.filter(search_by_title)
+        console.log(new_array)
         return new_array
     }
 }
