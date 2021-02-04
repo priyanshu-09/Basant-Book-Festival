@@ -230,15 +230,20 @@ function close_filter() {
 }
 
 function apply() {
-    working_arr = whole_books_array
+    working_arr = [{ title: 'highj', author: 'abcd', subject: 'Mech' },
+    { title: 'abcd', author: 'abcddddwddd', subject: 'abcde' },
+    { title: 'jooksd', author: 'pqr', subject: 'Chem' }]
 
-    working_arr = title()
-    working_arr = author()
-    working_arr = subject()
+    working_arr = title(working_arr)
+
+    working_arr = author(working_arr)
+    working_arr = subject(working_arr)
 
     current_page_number = 1
     paginate()
+    close_filter()
 }
+
 function title(input) {
     var value = document.getElementsByClassName('search_bar')[0].value
     if (value == 'Title' || value == '') {
@@ -280,4 +285,17 @@ function subject(input) {
 }
 function search_by_subject(input) {
     return input.subject.includes(document.getElementsByClassName('subject_heading')[0].innerHTML)
+}
+
+function clear(){
+    document.getElementsByClassName('search_bar')[0].value='Title'
+    document.getElementsByClassName('search_bar')[1].value='Author'
+    document.getElementsByClassName('subject_heading')[0].innerHTML='Subjects'
+}
+
+function clear_title(){
+    document.getElementsByClassName('search_bar')[0].value=''
+}
+function clear_author(){
+    document.getElementsByClassName('search_bar')[1].value=''
 }
