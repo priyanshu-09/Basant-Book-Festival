@@ -58,7 +58,7 @@ document.getElementsByClassName('next')[0].style.display = 'flex'
 
 
 function paginate() {
-    
+
     console.log(working_arr)
     document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
     document.getElementsByClassName('books_flexbox')[1].innerHTML = ''
@@ -229,8 +229,8 @@ function close_filter() {
         document.getElementsByClassName('next')[0].style.display = 'none'
         console.log('hi')
     }
-    else{
-        document.getElementsByClassName('next')[0].style.display ='flex'
+    else {
+        document.getElementsByClassName('next')[0].style.display = 'flex'
     }
     document.getElementsByClassName('dropdown_menu')[0].style.display = 'none'
 }
@@ -248,10 +248,12 @@ function apply() {
         document.getElementsByClassName('next')[0].style.display = 'none'
         console.log('hi')
     }
-    document.getElementsByClassName('prev')[0].style.display='none'
+    document.getElementsByClassName('prev')[0].style.display = 'none'
     current_page_number = 1
-    paginate()
-    close_filter()
+    if (total_books != 0) {
+        paginate()
+        close_filter()
+    }
 }
 
 function title(input) {
@@ -298,6 +300,7 @@ function search_by_subject(input) {
 }
 
 function clear() {
+    console.log('clearrr')
     document.getElementsByClassName('search_bar')[0].value = 'Title'
     document.getElementsByClassName('search_bar')[1].value = 'Author'
     document.getElementsByClassName('subject_heading')[0].innerHTML = 'Subjects'
