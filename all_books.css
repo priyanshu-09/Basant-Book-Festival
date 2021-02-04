@@ -61,7 +61,7 @@
 }
 
 .close_button_container {
-    width: 16vw;
+    /* width: 16vw; */
     display: flex;
     justify-content: flex-end;
 }

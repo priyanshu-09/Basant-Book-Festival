@@ -182,13 +182,16 @@ function populate_subjects() {
         .then(response => response.json())
         .then(result => {
             subjects_arr = result.data
-
+            console.log(subjects_arr)
+            console.log(result)
             for (var i = 0; i < subjects_arr.length; i++) {
-                document.getElementsByClassName('dropdown_menu')[0].innerHTML += `
-                    <div class="subjects" onclick='select_subject(${subjects_arr[i]})'>
-                        ${subjects_arr[i]}
-                    </div>
-                `
+                var div = document.createElement('div')
+                div.classList.add('subjects')
+                var onclick = document.createAttribute('onclick')
+                onclick.value = `subject_select(${subjects_arr[i]})`
+                div.innerHTML = subjects_arr[i]
+                div.setAttributeNode(onclick)
+                document.getElementsByClassName('dropdown_menu')[0].appendChild(div)
             }
         })
         .catch(error => console.log('error', error));
