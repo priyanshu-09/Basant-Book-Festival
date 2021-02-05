@@ -58,14 +58,18 @@ function orders() {
     var total_amt = 0
     document.getElementsByClassName('items_container')[0].innerHTML = ''
     for (var i = 0; i < ordered_books.length; i++) {
+        var publishers_name
+        for(var x=0;x <publishers_arr.length;x++){
+            if(publishers_arr[x].id==ordered_books[i].publisher_id){publishers_name=publishers_arr[x].name}
+        }
         var div = document.createElement('div')
         div.classList.add('books')
         div.innerHTML = `
             <div class="books_title" onclick='location.href="${ordered_books[i].link}"'>
                                 ${i + 1}. ${ordered_books[i].title}
                             </div>
-                            <div class="books_seller" onclick='location.href="all_books.html?id=${ordered_books[i].publisher_id}&name=${publishers_arr[(ordered_books[i].publisher_id) - 1].name}"'>
-                                ${publishers_arr[(ordered_books[i].publisher_id) - 1].name}
+                            <div class="books_seller" onclick='location.href="all_books.html?id=${ordered_books[i].publisher_id}&name=${publishers_name}"'>
+                                ${publishers_name}
                             </div>
                             <div class="books_old_price">
                                 ${ordered_books[i].price_indian_currency}
