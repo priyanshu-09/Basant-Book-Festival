@@ -42,6 +42,7 @@ fetch("https://bbf.bits-pilani.ac.in/api/order/my/", requestOptions)
     .catch(error => console.log('error', error));
 
 function orders() {
+    console.log(ordered_books)
     document.getElementsByClassName('headings_container')[0].innerHTML = `
         <div class="headings items">
                             Items
@@ -91,6 +92,7 @@ function orders() {
     document.getElementsByClassName('items_container')[0].style.height = '70%'
 }
 function recommended() {
+    console.log(recommended_books)
     document.getElementsByClassName('headings_container')[0].innerHTML = `
         <div class="headings items">
                             Items
@@ -139,6 +141,9 @@ function recommended() {
 }
 
 function populate() {
+    console.log('populate')
+    ordered_books=[]
+    recommended_books=[]
     for (var i = 0; i < order.length; i++) {
         var id_of_book = order[i].book_id
 
