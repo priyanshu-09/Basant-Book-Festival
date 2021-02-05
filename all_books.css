@@ -274,15 +274,24 @@
     color: #000000;
     overflow: hidden;
     margin-bottom: 0.5vh;
+    height: 0.9em;
+    overflow: hidden;
+    background: rgba(250, 250, 250, 0.5);
+    backdrop-filter: blur(3px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px;
 }
-
-.book_title>span {
+.book_title:hover{
+    height: max-content;
+    z-index: 2;
+}
+/* .book_title>span {
     display: inline-block;
     z-index: 8;
     width: max-content;
     padding-left: 100%;
     /* show the marquee just outside the paragraph */
-    will-change: transform;
+    /* will-change: transform;
     animation: marquee 15s linear infinite;
 }
 
@@ -299,7 +308,6 @@
     }
 }
 
-/* Respect user preferences about animations */
 
 @media (prefers-reduced-motion: reduce) {
     .book_title span {
@@ -308,10 +316,10 @@
         /* instead of animation: none, so an animationend event is 
      * still available, if previously attached.
      */
-        width: auto;
+        /* width: auto;
         padding-left: 0;
     }
-}
+/* } */ 
 
 .book_author {
     width: 13vw;

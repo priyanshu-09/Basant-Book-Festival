@@ -109,9 +109,11 @@ function populate_books(obj, row) {
     var book_title = document.createElement('div')
     book_title.classList.add('book_title')
 
-    var span = document.createElement('span')
-    span.innerHTML = obj.title
-    book_title.appendChild(span)
+    // var span = document.createElement('span')
+    // span.innerHTML = obj.title
+    // book_title.appendChild(span)
+
+    book_title.innerHTML=obj.title
 
     var book_author = document.createElement('div')
     book_author.classList.add('book_author')
@@ -299,7 +301,7 @@ function search_by_subject(input) {
     return input.subject.includes(document.getElementsByClassName('subject_heading')[0].innerHTML)
 }
 
-function clear() {
+function clear_fields() {
     console.log('clearrr')
     document.getElementsByClassName('search_bar')[0].value = 'Title'
     document.getElementsByClassName('search_bar')[1].value = 'Author'
