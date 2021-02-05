@@ -107,14 +107,18 @@ function recommended() {
     `
     document.getElementsByClassName('items_container')[0].innerHTML = ''
     for (var i = 0; i < recommended_books.length; i++) {
+        var publishers_name
+        for (var x = 0; x < publishers_arr.length; x++) {
+            if (publishers_arr[x].id == recommended_books[i].publisher_id) { publishers_name = publishers_arr[x].name }
+        }
         var div = document.createElement('div')
         div.classList.add('books')
         div.innerHTML = `
             <div class="books_title" onclick='location.href="${recommended_books[i].link}"'>
                                 ${i + 1}. ${recommended_books[i].title}
                             </div>
-                            <div class="books_seller" onclick='location.href="all_books.html?id=${recommended_books[i].publisher_id}&name=${publishers_arr[(recommended_books[i].publisher_id) - 1].name}"'>
-                                ${publishers_arr[(recommended_books[i].publisher_id) - 1].name}
+                            <div class="books_seller" onclick='location.href="all_books.html?id=${recommended_books[i].publisher_id}&name=${publishers_name}"'>
+                                ${publishers_name}
                             </div>
                             <div class="books_author">
                                 ${recommended_books[i].author}
