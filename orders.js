@@ -33,6 +33,7 @@ var requestOptions = {
 fetch("https://bbf.bits-pilani.ac.in/api/order/my/", requestOptions)
     .then(response => response.json())
     .then(result => {
+        console.log(result)
         order = result.personal
         recommendeds = result.library
         populate()
@@ -59,8 +60,8 @@ function orders() {
     document.getElementsByClassName('items_container')[0].innerHTML = ''
     for (var i = 0; i < ordered_books.length; i++) {
         var publishers_name
-        for(var x=0;x <publishers_arr.length;x++){
-            if(publishers_arr[x].id==ordered_books[i].publisher_id){publishers_name=publishers_arr[x].name}
+        for (var x = 0; x < publishers_arr.length; x++) {
+            if (publishers_arr[x].id == ordered_books[i].publisher_id) { publishers_name = publishers_arr[x].name }
         }
         var div = document.createElement('div')
         div.classList.add('books')
