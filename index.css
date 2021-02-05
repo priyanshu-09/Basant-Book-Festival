@@ -89,7 +89,7 @@ body {
 }
 
 .icon {
-    height: 7vh;
+    height: 10vh;
     left: 5vw;
     top: 1vh;
     margin-right: 10px;
@@ -124,7 +124,7 @@ body {
 }
 
 .cart {
-    height: 2.5vh;
+    height: 3vh;
     display: none;
     cursor: pointer;
 }
@@ -228,7 +228,11 @@ body {
 }
 
 .big_icon {
-    height: 10vh;
+    height: 14vh;
+}
+
+.presents {
+    font-size: 0.8em;
 }
 
 .vbbf {
