@@ -172,16 +172,17 @@ async function populate() {
 }
 
 function get_book_details(id_book) {
-    return new Promise(function (resolve, reject) {
-        fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_book}`)
-            .then(response => response.json())
-            .then(data => {
 
-                obj = data.data[0]
-                console.log('success')
-                return (obj)
-            })
-            .catch(error => console.log('error', error));
-    })
+    fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_book}`)
+        .then(response => response.json())
+        .then(data => {
+
+            obj = data.data[0]
+            console.log('success')
+            console.log(obj)
+            return (obj)
+        })
+        .catch(error => console.log('error', error));
+
 
 }
