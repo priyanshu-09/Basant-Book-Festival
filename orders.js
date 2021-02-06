@@ -147,32 +147,38 @@ function recommended() {
 }
 
 function populate() {
-    console.log('populate')
-    ordered_books = []
-    recommended_books = []
-    for (var i = 0; i < order.length; i++) {
-        var id_of_book = order[i].book_id
-        console.log('inside for')
-        fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
-            .then(response => response.json())
-            .then(data => {
-                obj = data.data[0]
-                console.log('success')
-                ordered_books.push(obj)
-            })
-            .catch(error => console.log('error', error));
-    }
+    let promise = new Promise(function (resolve, reject) {
+        console.log('populate')
+        ordered_books = []
+        recommended_books = []
+        for (var i = 0; i < order.length; i++) {
+            var id_of_book = order[i].book_id
+            console.log('inside for')
+            fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
+                .then(response => response.json())
+                .then(data => {
+                    obj = data.data[0]
+                    console.log('success')
+                    ordered_books.push(obj)
+                })
+                .catch(error => console.log('error', error));
+        }
 
-    for (var i = 0; i < recommendeds.length; i++) {
-        var id_of_book = recommendeds[i].book_id
+        for (var i = 0; i < recommendeds.length; i++) {
+            var id_of_book = recommendeds[i].book_id
 
-        fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
-            .then(response => response.json())
-            .then(data => {
-                obj = data.data[0]
-                recommended_books.push(obj)
-            })
-            .catch(error => console.log('error', error));
-    }
-    orders()
+            fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
+                .then(response => response.json())
+                .then(data => {
+                    obj = data.data[0]
+                    recommended_books.push(obj)
+                })
+                .catch(error => console.log('error', error));
+        }
+    })
+    promise.then(
+        result=> orders()
+        
+    )
+    
 }
