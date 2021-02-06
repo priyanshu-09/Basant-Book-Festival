@@ -177,8 +177,10 @@ function populate() {
         }
     })
     promise.then(
-        result=> orders()
-        
+        result=>{
+            console.log(result)
+            orders()
+        }
     )
     
 }
