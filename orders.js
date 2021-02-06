@@ -146,14 +146,14 @@ function recommended() {
     document.getElementsByClassName('items_container')[0].style.height = '80%'
 }
 
-function populate() {
+async function populate() {
     console.log('populate')
     ordered_books = []
     recommended_books = []
     for (var i = 0; i < order.length; i++) {
         var id_of_book = order[i].book_id
         console.log('inside for')
-        get_book_details(id_of_book).then(obj => {
+        await get_book_details(id_of_book).then(obj => {
             console.log('got the obj')
             ordered_books.push(obj)
         })
@@ -163,7 +163,7 @@ function populate() {
     for (var i = 0; i < recommendeds.length; i++) {
         var id_of_book = recommendeds[i].book_id
         console.log('inside for')
-        get_book_details(id_of_book).then(obj => {
+        await get_book_details(id_of_book).then(obj => {
             console.log('got the obj')
             ordered_books.push(obj)
         })
@@ -180,7 +180,7 @@ async function get_book_details(id_book) {
     var json = await response.json()
 
     console.log(json)
-    return obj.data[0]
+    return obj.data
     // .then(response => response.json())
     // .then(data => {
 
