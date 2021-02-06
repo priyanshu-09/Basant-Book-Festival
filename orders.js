@@ -146,14 +146,14 @@ function recommended() {
     document.getElementsByClassName('items_container')[0].style.height = '80%'
 }
 
-async function populate() {
+function populate() {
     console.log('populate')
     ordered_books = []
     recommended_books = []
     for (var i = 0; i < order.length; i++) {
         var id_of_book = order[i].book_id
         console.log('inside for')
-        var obj = await get_book_details(id_of_book)
+        var obj = get_book_details(id_of_book)
         console.log('got the obj')
         ordered_books.push(obj)
     }
@@ -161,7 +161,7 @@ async function populate() {
     for (var i = 0; i < recommendeds.length; i++) {
         var id_of_book = recommendeds[i].book_id
         console.log('inside for')
-        var obj = await get_book_details(id_of_book)
+        var obj = get_book_details(id_of_book)
         console.log('got the obj')
         recommended_books.push(obj)
 
@@ -171,18 +171,21 @@ async function populate() {
 
 }
 
-function get_book_details(id_book) {
+async function get_book_details(id_book) {
 
-    fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_book}`)
-        .then(response => response.json())
-        .then(data => {
+    var response =await fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_book}`)
+    var obj=await response.data[0]
+    console.log(obj)
+    return obj
+        // .then(response => response.json())
+        // .then(data => {
 
-            obj = data.data[0]
-            console.log('success')
-            console.log(obj)
-            return (obj)
-        })
-        .catch(error => console.log('error', error));
+        //     obj = data.data[0]
+        //     console.log('success')
+        //     console.log(obj)
+        //     return (obj)
+        // })
+        // .catch(error => console.log('error', error));
 
 
 }
