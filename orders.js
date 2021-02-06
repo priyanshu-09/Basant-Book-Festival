@@ -146,41 +146,42 @@ function recommended() {
     document.getElementsByClassName('items_container')[0].style.height = '80%'
 }
 
-function populate() {
-    let promise = new Promise(function (resolve, reject) {
-        console.log('populate')
-        ordered_books = []
-        recommended_books = []
-        for (var i = 0; i < order.length; i++) {
-            var id_of_book = order[i].book_id
-            console.log('inside for')
-            fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
-                .then(response => response.json())
-                .then(data => {
-                    obj = data.data[0]
-                    console.log('success')
-                    ordered_books.push(obj)
-                })
-                .catch(error => console.log('error', error));
-        }
+async function populate() {
+    console.log('populate')
+    ordered_books = []
+    recommended_books = []
+    for (var i = 0; i < order.length; i++) {
+        var id_of_book = order[i].book_id
+        console.log('inside for')
+        var obj = await get_book_details(id_of_book)
+        console.log('got the obj')
+        ordered_books.push(obj)
+    }
 
-        for (var i = 0; i < recommendeds.length; i++) {
-            var id_of_book = recommendeds[i].book_id
+    for (var i = 0; i < recommendeds.length; i++) {
+        var id_of_book = recommendeds[i].book_id
+        console.log('inside for')
+        var obj = await get_book_details(id_of_book)
+        console.log('got the obj')
+        recommended_books.push(obj)
 
-            fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
-                .then(response => response.json())
-                .then(data => {
-                    obj = data.data[0]
-                    recommended_books.push(obj)
-                })
-                .catch(error => console.log('error', error));
-        }
+    }
+    console.log('going to orders')
+    orders()
+
+}
+
+function get_book_details(id_book) {
+    return new Promise(function (resolve, reject) {
+        fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_book}`)
+            .then(response => response.json())
+            .then(data => {
+
+                obj = data.data[0]
+                console.log('success')
+                return (obj)
+            })
+            .catch(error => console.log('error', error));
     })
-    promise.then(
-        result=>{
-            console.log(result)
-            orders()
-        }
-    )
-    
+
 }
