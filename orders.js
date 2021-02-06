@@ -37,7 +37,6 @@ fetch("https://bbf.bits-pilani.ac.in/api/order/my/", requestOptions)
         order = result.personal
         recommendeds = result.library
         populate()
-        orders()
     })
     .catch(error => console.log('error', error));
 
@@ -62,7 +61,10 @@ function orders() {
     for (var i = 0; i < ordered_books.length; i++) {
         var publishers_name
         for (var x = 0; x < publishers_arr.length; x++) {
-            if (publishers_arr[x].id == ordered_books[i].publisher_id) { publishers_name = publishers_arr[x].name }
+            if (publishers_arr[x].id == ordered_books[i].publisher_id) {
+                publishers_name = publishers_arr[x].name
+                break
+            }
         }
         var div = document.createElement('div')
         div.classList.add('books')
@@ -111,7 +113,11 @@ function recommended() {
     for (var i = 0; i < recommended_books.length; i++) {
         var publishers_name
         for (var x = 0; x < publishers_arr.length; x++) {
-            if (publishers_arr[x].id == recommended_books[i].publisher_id) { publishers_name = publishers_arr[x].name }
+            if (publishers_arr[x].id == recommended_books[i].publisher_id) {
+                publishers_name = publishers_arr[x].name
+                break
+            }
+
         }
         var div = document.createElement('div')
         div.classList.add('books')
@@ -142,15 +148,16 @@ function recommended() {
 
 function populate() {
     console.log('populate')
-    ordered_books=[]
-    recommended_books=[]
+    ordered_books = []
+    recommended_books = []
     for (var i = 0; i < order.length; i++) {
         var id_of_book = order[i].book_id
-
+        console.log('inside for')
         fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
             .then(response => response.json())
             .then(data => {
                 obj = data.data[0]
+                console.log('success')
                 ordered_books.push(obj)
             })
             .catch(error => console.log('error', error));
@@ -167,5 +174,5 @@ function populate() {
             })
             .catch(error => console.log('error', error));
     }
-
+    orders()
 }

@@ -178,45 +178,62 @@ function yes_buy() {
         cancel()
     }
     else {
-        var arr1 = localStorage.getItem('orders')
-        var arr = JSON.parse(arr1)
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer " + token);
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
 
-        if (arr.includes(obj.id)) {
-            cancel()
-            alert('Already Ordered')
-        }
-        else {
-            var myHeaders = new Headers();
-            myHeaders.append("Authorization", "Bearer " + token);
+            redirect: 'follow'
+        };
 
-            var formdata = new FormData();
-            formdata.append("book_id", obj.id);
-            formdata.append("recommended", "False");
+        fetch("https://bbf.bits-pilani.ac.in/api/order/my/", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                var order = result.personal
+                var recommendeds = result.library
+                var arr = []
+                for (var i = 0; i < order.length; i++) {
+                    arr.push(order[i].book_id)
+                }
+                if (arr.includes(obj.id)) {
+                    cancel()
+                    alert('Already Ordered')
+                }
+                else {
+                    var myHeaders = new Headers();
+                    myHeaders.append("Authorization", "Bearer " + token);
 
-            var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: formdata,
-                redirect: 'follow'
-            };
+                    var formdata = new FormData();
+                    formdata.append("book_id", obj.id);
+                    formdata.append("recommended", "False");
 
-            fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    arr.push(obj.id)
-                    localStorage.setItem('orders', JSON.stringify(arr))
-                    console.log(result.message)
-                    document.getElementsByClassName('buttons_container')[0].innerHTML = ''
-                    document.getElementById('pop_up_content').innerHTML = result.message
-                    setTimeout(function () {
-                        document.getElementById('pop_up').style.display = 'none'
-                        document.getElementsByClassName('wrapper')[0].style.opacity = '1'
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: formdata,
+                        redirect: 'follow'
+                    };
 
-                        document.getElementById('pop_up_content').innerHTML = ''
-                    }, 1500)
-                })
-                .catch(error => console.log('error', error));
-        }
+                    fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
+                        .then(response => response.json())
+                        .then(result => {
+
+                            console.log(result.message)
+                            document.getElementsByClassName('buttons_container')[0].innerHTML = ''
+                            document.getElementById('pop_up_content').innerHTML = result.message
+                            setTimeout(function () {
+                                document.getElementById('pop_up').style.display = 'none'
+                                document.getElementsByClassName('wrapper')[0].style.opacity = '1'
+
+                                document.getElementById('pop_up_content').innerHTML = ''
+                            }, 1500)
+                        })
+                        .catch(error => console.log('error', error));
+                }
+
+            })
+            .catch(error => console.log('error', error));
 
     }
 }
@@ -229,45 +246,105 @@ function yes_recommend() {
         cancel()
     }
     else {
-        var arr1 = localStorage.getItem('recommended')
-        var arr = JSON.parse(arr1)
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer " + token);
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
 
-        if (arr.includes(obj.id)) {
-            cancel()
-            alert('Already Recommended')
-        }
-        else {
-            var myHeaders = new Headers();
-            myHeaders.append("Authorization", "Bearer " + token);
+            redirect: 'follow'
+        };
 
-            var formdata = new FormData();
-            formdata.append("book_id", obj.id);
-            formdata.append("recommended", "False");
+        fetch("https://bbf.bits-pilani.ac.in/api/order/my/", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                var order = result.personal
+                var recommendeds = result.library
+                var arr = []
+                for (var i = 0; i < recommendeds.length; i++) {
+                    arr.push(recommendeds[i].book_id)
+                }
+                if (arr.includes(obj.id)) {
+                    cancel()
+                    alert('Already Recommended')
+                }
+                else {
+                    var myHeaders = new Headers();
+                    myHeaders.append("Authorization", "Bearer " + token);
 
-            var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: formdata,
-                redirect: 'follow'
-            };
+                    var formdata = new FormData();
+                    formdata.append("book_id", obj.id);
+                    formdata.append("recommended", "False");
 
-            fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    arr.push(obj.id)
-                    localStorage.setItem('recommended', JSON.stringify(arr))
-                    console.log(result.message)
-                    document.getElementsByClassName('buttons_container')[0].innerHTML = ''
-                    document.getElementById('pop_up_content').innerHTML = result.message
-                    setTimeout(function () {
-                        document.getElementById('pop_up').style.display = 'none'
-                        document.getElementsByClassName('wrapper')[0].style.opacity = '1'
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: formdata,
+                        redirect: 'follow'
+                    };
 
-                        document.getElementById('pop_up_content').innerHTML = ''
-                    }, 1500)
-                })
-                .catch(error => console.log('error', error));
-        }
+                    fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
+                        .then(response => response.json())
+                        .then(result => {
+                            
+                            console.log(result.message)
+                            document.getElementsByClassName('buttons_container')[0].innerHTML = ''
+                            document.getElementById('pop_up_content').innerHTML = result.message
+                            setTimeout(function () {
+                                document.getElementById('pop_up').style.display = 'none'
+                                document.getElementsByClassName('wrapper')[0].style.opacity = '1'
+
+                                document.getElementById('pop_up_content').innerHTML = ''
+                            }, 1500)
+                        })
+                        .catch(error => console.log('error', error));
+                }
+
+            })
+            .catch(error => console.log('error', error));
 
     }
+
+    // else {
+    //     var arr1 = localStorage.getItem('recommended')
+    //     var arr = JSON.parse(arr1)
+
+    //     if (arr.includes(obj.id)) {
+    //         cancel()
+    //         alert('Already Recommended')
+    //     }
+    //     else {
+    //         var myHeaders = new Headers();
+    //         myHeaders.append("Authorization", "Bearer " + token);
+
+    //         var formdata = new FormData();
+    //         formdata.append("book_id", obj.id);
+    //         formdata.append("recommended", "False");
+
+    //         var requestOptions = {
+    //             method: 'POST',
+    //             headers: myHeaders,
+    //             body: formdata,
+    //             redirect: 'follow'
+    //         };
+
+    //         fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
+    //             .then(response => response.json())
+    //             .then(result => {
+    //                 arr.push(obj.id)
+    //                 localStorage.setItem('recommended', JSON.stringify(arr))
+    //                 console.log(result.message)
+    //                 document.getElementsByClassName('buttons_container')[0].innerHTML = ''
+    //                 document.getElementById('pop_up_content').innerHTML = result.message
+    //                 setTimeout(function () {
+    //                     document.getElementById('pop_up').style.display = 'none'
+    //                     document.getElementsByClassName('wrapper')[0].style.opacity = '1'
+
+    //                     document.getElementById('pop_up_content').innerHTML = ''
+    //                 }, 1500)
+    //             })
+    //             .catch(error => console.log('error', error));
+    //     }
+
+    // }
 }
