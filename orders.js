@@ -180,7 +180,7 @@ async function get_book_details(id_book) {
     var json = await response.json()
 
     console.log(json)
-    return obj.data
+    return json.data[0]
     // .then(response => response.json())
     // .then(data => {
 
