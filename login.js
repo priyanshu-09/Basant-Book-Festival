@@ -1,3 +1,10 @@
+if (sessionStorage.getItem('name') != undefined) {
+    document.getElementById('login_button').innerHTML = "Welcome " + sessionStorage.getItem('name')
+    document.getElementsByClassName('cart')[0].style.display = 'block'
+    document.getElementsByClassName('log_out')[0].style.display = 'flex'
+}
+
+
 var googleUser = {};
 var startApp = function () {
     gapi.load('auth2', function () {
@@ -19,12 +26,21 @@ function attachSignin(element) {
             onSignIn(googleUser)
             document.getElementById('login_button').innerHTML = "Welcome " +
                 googleUser.getBasicProfile().getGivenName();
-            document.getElementsByClassName('cart')[0].style.display='block'
+            document.getElementsByClassName('cart')[0].style.display = 'block'
         }, function (error) {
             alert(JSON.stringify(error, undefined, 2));
         });
 }
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        console.log('User signed out.');
+        document.getElementsByClassName('cart')[0].style.display = 'none'
+        document.getElementsByClassName('log_out')[0].style.display = 'none'
+        document.getElementById('login_button').innerHTML = 'Log In using BITS Mail'
+    });
 
+}
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
@@ -53,8 +69,9 @@ function authenticate(id_token) {
         .then(response => response.json())
         .then(result => {
             sessionStorage.clear();
+            console.log(result)
             sessionStorage.setItem("token", result.token);
-            sessionStorage.setItem("name",result.first_name)
+            sessionStorage.setItem("name", result.first_name)
         })
         .catch(error => alert(error));
 

@@ -1,10 +1,7 @@
 
 // var access_token = new URLSearchParams(url_now.search).get('access_token');
 // console.log(access_token)
-if (sessionStorage.getItem('name') != undefined) {
-    document.getElementById('login_button').innerHTML = "Welcome " + sessionStorage.getItem('name')
-    document.getElementsByClassName('cart')[0].style.display = 'block'
-}
+
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -98,9 +95,6 @@ function create_stalls(obj, x) {
 
 }
 
-setTimeout(function () {
-
-}, 500)
 
 
 function ready() {

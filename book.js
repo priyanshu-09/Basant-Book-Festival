@@ -1,7 +1,4 @@
-if (sessionStorage.getItem('name') != undefined) {
-    document.getElementById('login_button').innerHTML = "Welcome " + sessionStorage.getItem('name')
-    document.getElementsByClassName('cart')[0].style.display = 'block'
-}
+
 var temp = []
 localStorage.setItem('orders', JSON.stringify(temp))
 localStorage.setItem('recommended', JSON.stringify(temp))

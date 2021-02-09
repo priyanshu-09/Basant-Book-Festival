@@ -165,7 +165,7 @@ async function populate() {
         console.log('inside for')
         await get_book_details(id_of_book).then(obj => {
             console.log('got the obj')
-            ordered_books.push(obj)
+            recommended_books.push(obj)
         })
 
     }
