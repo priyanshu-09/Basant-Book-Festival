@@ -242,6 +242,12 @@
         padding: 1.3vh 4vw;
         font-size: 1em;
     }
+    .content {
+        margin-top: 5vh;
+    }
+    .box {
+        height: 60vh;
+    }
     .rounded_box {
         width: 80vw;
         height: 75vh;
@@ -264,7 +270,7 @@
         font-size: 1em;
         font-weight: bold;
         /* font-size: 32px; */
-        line-height: 0;
+        line-height: 1em;
         margin-bottom: 2vh;
         max-width: 70vw;
     }

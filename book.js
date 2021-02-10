@@ -28,7 +28,7 @@ fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
     .catch(error => console.log('error', error));
 
 function populate() {
-    document.getElementsByClassName('loader_wrapper')[0].style.display='none'
+    document.getElementsByClassName('loader_wrapper')[0].style.display = 'none'
     document.getElementsByClassName('rounded_box')[0].innerHTML = ''
 
     var book_img_container = document.createElement('div')
@@ -59,11 +59,11 @@ function populate() {
     var book_author_id = document.createAttribute('id')
     book_author_id.value = 'book_author'
     book_author.setAttributeNode(book_author_id)
-    book_author.innerHTML = obj.author
+    book_author.innerHTML = 'by ' + obj.author
 
     var book_publisher_container = document.createElement('div')
     book_publisher_container.classList.add('book_publisher_container')
-    book_publisher_container.innerHTML = `by <a id='book_publisher' onclick='location.href="all_books.html?id=${obj.publisher_id}&name=${publisher_name}"'` + `>${publisher_name}`
+    book_publisher_container.innerHTML = `<a id='book_publisher' onclick='location.href="all_books.html?id=${obj.publisher_id}&name=${publisher_name}"'` + `>${publisher_name}`
 
     var book_price_container = document.createElement('div')
     book_price_container.classList.add('book_price_container')
@@ -90,7 +90,7 @@ function populate() {
     book_price_container.appendChild(old_price)
     book_price_container.appendChild(discount)
 
-    if (is_professor != undefined && is_professor=='true') {
+    if (is_professor != undefined && is_professor == 'true') {
         var personal_use = document.createElement('div')
         personal_use.classList.add('button_container')
 
@@ -120,7 +120,7 @@ function populate() {
     book_content.appendChild(book_publisher_container)
     book_content.appendChild(book_price_container)
 
-    if (is_professor != undefined && is_professor=='true') {
+    if (is_professor != undefined && is_professor == 'true') {
         book_content.appendChild(personal_use)
 
     }

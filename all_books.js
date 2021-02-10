@@ -30,22 +30,42 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-fetch("https://bbf.bits-pilani.ac.in/api/book/filter/fs/publisher/", requestOptions)
-    .then(response => response.json())
-    .then(result => {
-        console.log(result.data)
-        working_arr = result.data;
-        whole_books_array = working_arr
-        total_books = working_arr.length;
-        document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
-        if (total_books < 9) {
-            document.getElementsByClassName('next')[0].style.display = 'none'
-            console.log('hi')
-        }
-        paginate()
-        populate_subjects()
-    })
-    .catch(error => console.log('error', error));
+var publishers_arr = localStorage.getItem('id' + id_of_publisher)
+
+if (publishers_arr != undefined) {
+    working_arr = JSON.parse(publishers_arr)
+    console.log('getting from local storage', publishers_arr)
+    whole_books_array = working_arr
+    total_books = working_arr.length;
+    document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
+    if (total_books < 9) {
+        document.getElementsByClassName('next')[0].style.display = 'none'
+        console.log('hi')
+    }
+    paginate()
+    populate_subjects()
+}
+else {
+    fetch("https://bbf.bits-pilani.ac.in/api/book/filter/fs/publisher/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            console.log(result.data)
+            working_arr = result.data;
+            whole_books_array = working_arr
+            total_books = working_arr.length;
+            document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
+            if (total_books < 9) {
+                document.getElementsByClassName('next')[0].style.display = 'none'
+                console.log('hi')
+            }
+            localStorage.setItem('id' + id_of_publisher, JSON.stringify(whole_books_array))
+            console.log('putting in local storage')
+            paginate()
+            populate_subjects()
+        })
+        .catch(error => console.log('error', error));
+}
+
 
 document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
 document.getElementsByClassName('books_flexbox')[1].innerHTML = ''
@@ -318,6 +338,6 @@ function clear_author() {
 
 
 function open_window(id) {
-    
+
     window.open(`book.html?id=${id}&name=${name_of_publisher}`)
 }
