@@ -181,9 +181,10 @@ async function populate() {
     console.log('populate')
     ordered_books = []
     recommended_books = []
+    ordered_id=[]
     console.log("orders",order)
     console.log('recommended',recommendeds)
-    
+
     for (var i = 0; i < order.length; i++) {
         var id_of_book = order[i].book_id
         var order_id = order[i].id
@@ -203,6 +204,7 @@ async function populate() {
     }
     document.getElementsByClassName('loader_wrapper')[0].style.display = 'none'
     console.log('going to orders')
+    console.log('ids',ordered_id)
     if (is_professor == 'true') {
         orders()
     }
