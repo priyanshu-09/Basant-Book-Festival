@@ -84,7 +84,10 @@ function populate_books(obj, row) {
     container_div.classList.add('book_card')
     var onclick = document.createAttribute('onclick')
     onclick.value = `location.href='book.html?id=${obj.id}&name=${name_of_publisher}'`
+    var target=document.createAttribute('target')
+    target.value='_blank'
     container_div.setAttributeNode(onclick)
+    container_div.setAttributeNode(target)
 
     var book_img_container = document.createElement('div')
     book_img_container.classList.add('book_img_container')

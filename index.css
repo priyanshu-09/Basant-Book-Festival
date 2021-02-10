@@ -503,7 +503,7 @@ body {
 .mail_icon {
     height: 1em;
     margin-right: 0.5vw;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 @media(max-width:600px) {

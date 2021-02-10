@@ -175,11 +175,11 @@
     top: 90vh;
     z-index: 3;
 }
-
+/* 
 .next:hover {
     background: transparent;
     color: #3D429C;
-}
+} */
 
 .prev {
     left: 2vw;

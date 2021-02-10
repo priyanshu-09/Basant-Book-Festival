@@ -181,12 +181,13 @@ async function populate() {
     console.log('populate')
     ordered_books = []
     recommended_books = []
+    console.log("orders",order)
+    console.log('recommended',recommendeds)
+    
     for (var i = 0; i < order.length; i++) {
         var id_of_book = order[i].book_id
         var order_id = order[i].id
-        console.log('inside for')
         await get_book_details(id_of_book).then(obj => {
-            console.log('got the obj')
             ordered_books.push(obj)
             ordered_id.push(order_id)
         })
@@ -195,9 +196,7 @@ async function populate() {
 
     for (var i = 0; i < recommendeds.length; i++) {
         var id_of_book = recommendeds[i].book_id
-        console.log('inside for')
         await get_book_details(id_of_book).then(obj => {
-            console.log('got the obj')
             recommended_books.push(obj)
         })
 
@@ -218,7 +217,7 @@ async function get_book_details(id_book) {
     var response = await fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_book}`)
     var json = await response.json()
 
-    console.log(json)
+
     return json.data[0]
     // .then(response => response.json())
     // .then(data => {
@@ -238,7 +237,7 @@ function cancel_order(index, order_id) {
     ordered_id.splice(index, 1)
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer "+token);
+    myHeaders.append("Authorization", "Bearer " + token);
 
     var formdata = new FormData();
     formdata.append("order_id", ordered_id.toString());
