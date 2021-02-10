@@ -242,7 +242,7 @@ function cancel_order(index, order_id) {
     myHeaders.append("Authorization", "Bearer " + token);
 
     var formdata = new FormData();
-    formdata.append("order_id", ordered_id.toString());
+    formdata.append("order_id", order_id.toString());
 
     var requestOptions = {
         method: 'POST',
