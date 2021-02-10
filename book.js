@@ -233,7 +233,7 @@ function yes_buy() {
                                 document.getElementsByClassName('wrapper')[0].style.opacity = '1'
 
                                 document.getElementById('pop_up_content').innerHTML = ''
-                            }, 4500)
+                            }, 9500)
                         })
                         .catch(error => console.log('error', error));
                 }
@@ -302,7 +302,7 @@ This book will be procured on approval. Once it arrives, you will be invited to 
                                 document.getElementsByClassName('wrapper')[0].style.opacity = '1'
 
                                 document.getElementById('pop_up_content').innerHTML = ''
-                            }, 3000)
+                            }, 7000)
                         })
                         .catch(error => console.log('error', error));
                 }
