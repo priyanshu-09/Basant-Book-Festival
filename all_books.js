@@ -58,6 +58,7 @@ else {
                 document.getElementsByClassName('next')[0].style.display = 'none'
                 console.log('hi')
             }
+            localStorage.clear()
             localStorage.setItem('id' + id_of_publisher, JSON.stringify(whole_books_array))
             console.log('putting in local storage')
             paginate()
