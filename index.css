@@ -491,14 +491,14 @@ body {
 
 .contact_us_heading {
     font-size: 1.6em;
-    width: 20vw;
+    width: 30vw;
     font-weight: normal;
     margin-bottom: 3vh;
 }
 
 .contact_us_links_container {
     margin-bottom: 1vh;
-    width: 20vw;
+    width: 30vw;
     display: flex;
 }
 
