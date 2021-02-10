@@ -20,7 +20,7 @@ var startApp = function () {
 };
 
 function attachSignin(element) {
-    console.log(element.id);
+    // console.log(element.id);
     auth2.attachClickHandler(element, {},
         function (googleUser) {
             onSignIn(googleUser)
@@ -36,7 +36,7 @@ function attachSignin(element) {
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-        console.log('User signed out.');
+        // console.log('User signed out.');
         document.getElementsByClassName('cart')[0].style.display = 'none'
         document.getElementsByClassName('log_out')[0].style.display = 'none'
         document.getElementById('login_button').innerHTML = 'Log In using BITS Mail'
@@ -48,12 +48,12 @@ function signOut() {
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
-    // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    // console.log('Full Name: ' + profile.getName());
-    // console.log('Given Name: ' + profile.getGivenName());
-    // console.log('Family Name: ' + profile.getFamilyName());
-    // console.log("Image URL: " + profile.getImageUrl());
-    // console.log("Email: " + profile.getEmail());
+    // // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    // // console.log('Full Name: ' + profile.getName());
+    // // console.log('Given Name: ' + profile.getGivenName());
+    // // console.log('Family Name: ' + profile.getFamilyName());
+    // // console.log("Image URL: " + profile.getImageUrl());
+    // // console.log("Email: " + profile.getEmail());
 
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
@@ -73,7 +73,7 @@ function authenticate(id_token) {
         .then(response => response.json())
         .then(result => {
             sessionStorage.clear();
-            console.log(result)
+            // console.log(result)
             sessionStorage.setItem("token", result.token);
             sessionStorage.setItem("name", result.first_name)
             sessionStorage.setItem('is_professor', result.is_professor)

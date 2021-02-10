@@ -34,13 +34,13 @@ var publishers_arr = localStorage.getItem('id' + id_of_publisher)
 
 // if (publishers_arr != undefined) {
 //     working_arr = JSON.parse(publishers_arr)
-//     console.log('getting from local storage', publishers_arr)
+// //     console.log('getting from local storage', publishers_arr)
 //     whole_books_array = working_arr
 //     total_books = working_arr.length;
 //     document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
 //     if (total_books < 9) {
 //         document.getElementsByClassName('next')[0].style.display = 'none'
-//         console.log('hi')
+// //         console.log('hi')
 //     }
 //     paginate()
 //     populate_subjects()
@@ -49,18 +49,18 @@ var publishers_arr = localStorage.getItem('id' + id_of_publisher)
 fetch("https://bbf.bits-pilani.ac.in/api/book/filter/fs/publisher/", requestOptions)
     .then(response => response.json())
     .then(result => {
-        console.log(result.data)
+        // console.log(result.data)
         working_arr = result.data;
         whole_books_array = working_arr
         total_books = working_arr.length;
         document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
         if (total_books < 9) {
             document.getElementsByClassName('next')[0].style.display = 'none'
-            console.log('hi')
+            // console.log('hi')
         }
         // localStorage.clear()
         // localStorage.setItem('id' + id_of_publisher, JSON.stringify(whole_books_array))
-        console.log('putting in local storage')
+        // console.log('putting in local storage')
         paginate()
         populate_subjects()
     })
@@ -76,7 +76,7 @@ document.getElementsByClassName('next')[0].style.display = 'flex'
 
 function paginate() {
     document.getElementsByClassName('loader_wrapper')[0].style.display = 'none'
-    console.log(working_arr)
+    // console.log(working_arr)
     document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
     document.getElementsByClassName('books_flexbox')[1].innerHTML = ''
     for (var i = (8 * (current_page_number - 1)); i < 8 * current_page_number; i++) {
@@ -209,8 +209,8 @@ function populate_subjects() {
         .then(response => response.json())
         .then(result => {
             subjects_arr = result.data
-            console.log(subjects_arr)
-            console.log(result)
+            // console.log(subjects_arr)
+            // console.log(result)
             for (var i = 0; i < subjects_arr.length; i++) {
                 var div = document.createElement('div')
                 div.classList.add('subjects')
@@ -251,7 +251,7 @@ function close_filter() {
     document.getElementsByClassName('books_container')[0].style.display = 'flex'
     if (total_books < 9) {
         document.getElementsByClassName('next')[0].style.display = 'none'
-        console.log('hi')
+        // console.log('hi')
     }
     else {
         document.getElementsByClassName('next')[0].style.display = 'flex'
@@ -270,7 +270,7 @@ function apply() {
     document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
     if (total_books < 9) {
         document.getElementsByClassName('next')[0].style.display = 'none'
-        console.log('hi')
+        // console.log('hi')
     }
     document.getElementsByClassName('prev')[0].style.display = 'none'
     current_page_number = 1
@@ -287,7 +287,7 @@ function title(input) {
     }
     else {
         var new_array = input.filter(search_by_title)
-        console.log(new_array)
+        // console.log(new_array)
         return new_array
     }
 }
@@ -324,7 +324,7 @@ function search_by_subject(input) {
 }
 
 function clear_fields() {
-    console.log('clearrr')
+    // console.log('clearrr')
     document.getElementsByClassName('search_bar')[0].value = 'Title'
     document.getElementsByClassName('search_bar')[1].value = 'Author'
     document.getElementsByClassName('subject_heading')[0].innerHTML = 'Subjects'

@@ -57,7 +57,7 @@ var requestOptions = {
 fetch("https://bbf.bits-pilani.ac.in/api/order/my/", requestOptions)
     .then(response => response.json())
     .then(result => {
-        console.log(result)
+        // console.log(result)
         order = result.personal
         recommendeds = result.library
 
@@ -66,7 +66,7 @@ fetch("https://bbf.bits-pilani.ac.in/api/order/my/", requestOptions)
     .catch(error => console.log('error', error));
 
 function orders() {
-    console.log(ordered_books)
+    // console.log(ordered_books)
     document.getElementsByClassName('headings_container')[0].innerHTML = `
         <div class="headings items">
                             Items
@@ -125,7 +125,7 @@ function orders() {
     document.getElementsByClassName('items_container')[0].style.height = '70%'
 }
 function recommended() {
-    console.log(recommended_books)
+    // console.log(recommended_books)
     document.getElementsByClassName('headings_container')[0].innerHTML = `
         <div class="headings items">
                             Items
@@ -178,12 +178,12 @@ function recommended() {
 }
 
 async function populate() {
-    console.log('populate')
+    // console.log('populate')
     ordered_books = []
     recommended_books = []
     ordered_id = []
-    console.log("orders", order)
-    console.log('recommended', recommendeds)
+    // console.log("orders", order)
+    // console.log('recommended', recommendeds)
 
     for (var i = 0; i < order.length; i++) {
         var id_of_book = order[i].book_id
@@ -203,8 +203,8 @@ async function populate() {
 
     }
     document.getElementsByClassName('loader_wrapper')[0].style.display = 'none'
-    console.log('going to orders')
-    console.log('ids', ordered_id)
+    // console.log('going to orders')
+    // console.log('ids', ordered_id)
     if (is_professor == 'true') {
         orders()
     }
@@ -225,8 +225,8 @@ async function get_book_details(id_book) {
     // .then(data => {
 
     //     obj = data.data[0]
-    //     console.log('success')
-    //     console.log(obj)
+    // //     console.log('success')
+    // //     console.log(obj)
     //     return (obj)
     // })
     // .catch(error => console.log('error', error));
@@ -254,7 +254,7 @@ function cancel_order(index, order_id) {
     fetch("https://bbf.bits-pilani.ac.in/api/order/cancel/", requestOptions)
         .then(response => response.json())
         .then(result => {
-            console.log(result)
+            // console.log(result)
             orders()
         })
         .catch(error => console.log('error', error));

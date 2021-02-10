@@ -22,7 +22,7 @@ fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
     .then(response => response.json())
     .then(data => {
         obj = data.data[0]
-        console.log(obj)
+        // console.log(obj)
         populate()
     })
     .catch(error => console.log('error', error));
@@ -175,9 +175,9 @@ function cancel() {
 }
 
 function yes_buy() {
-    console.log(obj)
+    // console.log(obj)
     var token = sessionStorage.getItem('token')
-    console.log(token)
+    // console.log(token)
     if (token == undefined) {
         alert('Please Log in with your University ID first')
         cancel()
@@ -224,7 +224,7 @@ function yes_buy() {
                         .then(response => response.json())
                         .then(result => {
 
-                            console.log(result.message)
+                            // console.log(result.message)
                             document.getElementsByClassName('buttons_container')[0].innerHTML = ''
                             document.getElementById('pop_up_content').innerHTML = `<b>Thank you for selecting the book for your personal use.</b> <br>
          This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final purchase by you. On your confirmation, the vendor will issue a bill in your name to make the payment. Once the payment is made, you can collect the book from the Library.`
@@ -244,9 +244,9 @@ function yes_buy() {
     }
 }
 function yes_recommend() {
-    console.log(obj)
+    // console.log(obj)
     var token = sessionStorage.getItem('token')
-    console.log(token)
+    // console.log(token)
     if (token == undefined) {
         alert('Please Log in with your University ID first')
         cancel()
@@ -293,7 +293,7 @@ function yes_recommend() {
                         .then(response => response.json())
                         .then(result => {
 
-                            console.log(result.message)
+                            // console.log(result.message)
                             document.getElementsByClassName('buttons_container')[0].innerHTML = ''
                             document.getElementById('pop_up_content').innerHTML = `<b>Thank you for recommending the book for the Library!</b><br>
 This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.`
@@ -340,7 +340,7 @@ This book will be procured on approval. Once it arrives, you will be invited to 
     //             .then(result => {
     //                 arr.push(obj.id)
     //                 localStorage.setItem('recommended', JSON.stringify(arr))
-    //                 console.log(result.message)
+    // //                 console.log(result.message)
     //                 document.getElementsByClassName('buttons_container')[0].innerHTML = ''
     //                 document.getElementById('pop_up_content').innerHTML = result.message
     //                 setTimeout(function () {

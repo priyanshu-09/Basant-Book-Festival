@@ -37,7 +37,7 @@ fetch("https://bbf.bits-pilani.ac.in/api/publisher/list/")
 
 function populate_publilshers() {
     var length = publishers_arr.length
-    console.log(length, publishers_arr)
+    // console.log(length, publishers_arr)
     var number_of_rows = Math.ceil(length / 4)
     var current = 0
     document.getElementsByClassName('publishers_grid_container')[0].innerHTML = ''
@@ -48,7 +48,7 @@ function populate_publilshers() {
         document.getElementsByClassName('publishers_grid_container')[0].appendChild(container_div)
 
         if (length < 4) {
-            console.log(length)
+            // console.log(length)
             for (var i = 0; i < length; i++) {
                 create_stalls(publishers_arr[current], x)
                 current++
@@ -100,18 +100,18 @@ function create_stalls(obj, x) {
 // function ready() {
 //     var height_of_svg = document.getElementsByClassName('landing_svg')[0].offsetHeight
 //     var percent_on_hero_section
-//     console.log('window width', window.innerWidth)
-//     console.log('window outer width', window.outerWidth)
+// //     console.log('window width', window.innerWidth)
+// //     console.log('window outer width', window.outerWidth)
 //     if (window.outerWidth > 600) {
 //         percent_on_hero_section = 0.825
-//         console.log('web')
+// //         console.log('web')
 //     }
 //     else {
-//         console.log('mobile')
+// //         console.log('mobile')
 //         percent_on_hero_section = 0.725
 //     }
-//     console.log(window.outerHeight)
-//     console.log(height_of_svg)
+// //     console.log(window.outerHeight)
+// //     console.log(height_of_svg)
 //     if (height_of_svg != 0) {
 //         document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
 //         document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
@@ -134,9 +134,9 @@ function create_stalls(obj, x) {
 
 // document.addEventListener("DOMContentLoaded", ready);
 
-function onSignIn(googleUser) {
-    var id_token = googleUser.getAuthResponse().id_token;
-    console.log(id_token)
-    console.log('hi')
-}
+// function onSignIn(googleUser) {
+//     var id_token = googleUser.getAuthResponse().id_token;
+//     // console.log(id_token)
+//     // console.log('hi')
+// }
 
