@@ -97,42 +97,42 @@ function create_stalls(obj, x) {
 
 
 
-function ready() {
-    var height_of_svg = document.getElementsByClassName('landing_svg')[0].offsetHeight
-    var percent_on_hero_section
-    console.log('window width', window.innerWidth)
-    console.log('window outer width', window.outerWidth)
-    if (window.outerWidth > 600) {
-        percent_on_hero_section = 0.825
-        console.log('web')
-    }
-    else {
-        console.log('mobile')
-        percent_on_hero_section = 0.725
-    }
-    console.log(window.outerHeight)
-    console.log(height_of_svg)
-    if (height_of_svg != 0) {
-        document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
-        document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
-    }
-    else {
-        setTimeout(function () {
-            if (height_of_svg == 0) {
-                document.getElementsByClassName('landing_svg')[0].style.top = '0px'
-                document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
-            }
-            else {
-                document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
-                document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
-            }
+// function ready() {
+//     var height_of_svg = document.getElementsByClassName('landing_svg')[0].offsetHeight
+//     var percent_on_hero_section
+//     console.log('window width', window.innerWidth)
+//     console.log('window outer width', window.outerWidth)
+//     if (window.outerWidth > 600) {
+//         percent_on_hero_section = 0.825
+//         console.log('web')
+//     }
+//     else {
+//         console.log('mobile')
+//         percent_on_hero_section = 0.725
+//     }
+//     console.log(window.outerHeight)
+//     console.log(height_of_svg)
+//     if (height_of_svg != 0) {
+//         document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
+//         document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
+//     }
+//     else {
+//         setTimeout(function () {
+//             if (height_of_svg == 0) {
+//                 document.getElementsByClassName('landing_svg')[0].style.top = '0px'
+//                 document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
+//             }
+//             else {
+//                 document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
+//                 document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
+//             }
 
-        }, 500)
-    }
+//         }, 500)
+//     }
 
-}
+// }
 
-document.addEventListener("DOMContentLoaded", ready);
+// document.addEventListener("DOMContentLoaded", ready);
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;

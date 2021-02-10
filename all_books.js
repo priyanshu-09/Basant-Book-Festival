@@ -271,7 +271,7 @@ function title(input) {
     }
 }
 function search_by_title(input) {
-    return input.title.includes(document.getElementsByClassName('search_bar')[0].value)
+    return input.title.toLowerCase().includes(document.getElementsByClassName('search_bar')[0].value.toLowerCase())
 }
 
 function author(input) {
@@ -285,7 +285,7 @@ function author(input) {
     }
 }
 function search_by_author(input) {
-    return input.author.includes(document.getElementsByClassName('search_bar')[1].value)
+    return input.author.toLowerCase().includes(document.getElementsByClassName('search_bar')[1].value.toLowerCase())
 }
 
 function subject(input) {

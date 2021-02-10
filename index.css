@@ -205,8 +205,8 @@ body {
     position: absolute;
     left: 0;
     width: 100vw;
-    opacity: 0;
     right: 0;
+    top: 50px;
     transition: all 0.2s ease;
     /* transform: scaleY(.75); */
 }
@@ -514,11 +514,36 @@ body {
         padding-left: 3vw;
         margin-top: 1vh;
     }
+    .button:hover {
+        background-color: #3D429C;
+        color: white;
+    }
+    .button_inverse:hover {
+        background-color: rgba(250, 250, 250, 0.6);
+        color: #3D429C;
+    }
+    .button, .button_inverse {
+        padding: 1vh 1.5vw 1vh 1.5vw;
+        font-size: 0.8em;
+    }
+    .login_logout {
+        flex-direction: column;
+        margin-top: 2vh;
+    }
+    .log_out {
+        margin-top: 1vh;
+    }
     .login_button_container {
         padding-right: 5vw;
         /* padding-top: 1vh; */
         max-width: 50vw;
         margin-top: 2.5vh;
+    }
+    .icon {
+        height: 7vh;
+    }
+    .landing_svg {
+        top: 80vh;
     }
     .main_heading {
         width: 100vw;
@@ -545,6 +570,24 @@ body {
     .about {
         display: block;
     }
+    .about_pics {
+        display: none;
+    }
+    .about_text_container {
+        width: 100vw;
+    }
+    .about_heading {
+        width: 85vw;
+        margin-left: 0;
+        margin-top: 10vh;
+    }
+    .about_text {
+        width: 85vw;
+        margin-left: 0;
+    }
+    .about_button {
+        margin-left: 0;
+    }
     .publishers_heading {
         font-size: 1em;
         line-height: 20px;
@@ -556,6 +599,7 @@ body {
     }
     .stalls {
         height: 22vw;
+        margin: 0 1vw 0 1vw;
     }
     .stalls_image {
         height: 21vw;
@@ -566,7 +610,8 @@ body {
         font-size: 1em;
     }
     .footer_links a {
-        margin-right: 3vw;
+        margin-right: 2vw;
+        font-size: 0.8em;
     }
     .copyright {
         width: 40vw;
@@ -586,10 +631,17 @@ body {
         font-size: 1.3em;
         width: 40vw;
     }
+    .mail_icon_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .contact_us_links_container {
-        width: 40vw;
+        width: 35vw;
+        margin-right: 5vw;
     }
     .contact_us_links_container a {
-        font-size: 0.9em;
+        font-size: 0.6em;
+        display: flex;
     }
 }
