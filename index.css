@@ -592,6 +592,7 @@ body {
     }
     .about_button {
         margin-left: 0;
+        width: auto;
     }
     .publishers_heading {
         font-size: 1em;
@@ -617,6 +618,9 @@ body {
     .footer_links a {
         margin-right: 2vw;
         font-size: 0.8em;
+    }
+    .footer_bits_logo {
+        height: 6vh;
     }
     .copyright {
         width: 40vw;

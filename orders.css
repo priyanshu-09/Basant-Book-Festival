@@ -221,4 +221,33 @@
     .headings {
         font-size: 0.8em;
     }
+    .seller {
+        margin-right: 4vw;
+    }
+    .headings_container>div {
+        font-size: 0.8em;
+    }
+    .prices {
+        margin-right: 8vw;
+    }
+    .ordered_books_container {
+        height: 90%;
+    }
+    .books {
+        font-size: 0.8em;
+    }
+    .books_title {
+        width: 8vw;
+    }
+    .books_old_price {
+        margin-right: 7vw;
+    }
+    .books_new_price {
+        width: 12vw;
+    }
+    .books_author {
+        width: 13vw;
+        height: 100%;
+        margin: 0 4vw 0 2vw;
+    }
 }

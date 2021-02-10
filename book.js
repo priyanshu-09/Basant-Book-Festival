@@ -137,7 +137,7 @@ function Buy() {
 
     document.getElementById('pop_up_content').innerHTML = `
         <br><br>
-<b>Are you sure you want to continue buying this book ?</b>
+<b>Are you sure you want to buy this book ?</b>
     `
     document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">
@@ -155,7 +155,7 @@ function Recommend() {
 
     document.getElementById('pop_up_content').innerHTML = `
         <br><br>
-<b>Are you sure you want to continue recommending this book ?</b>
+<b>Are you sure you want to recommend this book ?</b>
     `
     document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">

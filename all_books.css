@@ -406,7 +406,7 @@
     .all_books_heading {
         font-size: 1.3em;
         margin-top: 5vh;
-        line-height: 0;
+        line-height: 1.3em;
     }
     .wrapper {
         height: 200vh;
@@ -446,6 +446,7 @@
     .book_price_container {
         width: 40vw;
         justify-content: space-evenly;
+        font-size: 0.8em;
     }
     .next, .prev {
         top: 190vh;
