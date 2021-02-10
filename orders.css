@@ -198,3 +198,27 @@
     font-weight: bold;
     color: #FF596B;
 }
+
+@media(max-width:600px) {
+    .back_button {
+        position: absolute;
+        top: -7vh;
+        right: 3vw;
+    }
+    .back_section {
+        width: 0;
+    }
+    .orders_container {
+        width: 86vw;
+        margin-left: 3vw;
+    }
+    .orders_heading {
+        width: 80vw;
+    }
+    .orders, .recommended {
+        font-size: 1.4em;
+    }
+    .headings {
+        font-size: 0.8em;
+    }
+}
