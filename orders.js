@@ -107,7 +107,9 @@ function orders() {
                                 <div class="books_new_price">
                                     ${parseInt(ordered_books[i].expected_price)}
                                 </div>
-                                <div class='cancel' onclick='cancel_order(${i},${ordered_id[i]})'
+                                <div class='cancel' onclick='cancel_order(${i},${ordered_id[i]})'>
+                                    Cancel
+                                </div>
                             </div>
                             
         `
