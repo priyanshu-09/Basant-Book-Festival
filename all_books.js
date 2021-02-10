@@ -54,7 +54,7 @@ document.getElementsByClassName('next')[0].style.display = 'flex'
 
 
 function paginate() {
-    document.getElementsByClassName('loader_wrapper')[0].style.display='none'
+    document.getElementsByClassName('loader_wrapper')[0].style.display = 'none'
     console.log(working_arr)
     document.getElementsByClassName('books_flexbox')[0].innerHTML = ''
     document.getElementsByClassName('books_flexbox')[1].innerHTML = ''
@@ -84,10 +84,10 @@ function populate_books(obj, row) {
     container_div.classList.add('book_card')
     var onclick = document.createAttribute('onclick')
     // onclick.value = `location.href='book.html?id=${obj.id}&name=${name_of_publisher}'`
-    onclick.value=`open_window(${obj.id},${name_of_publisher})`
+    onclick.value = `open_window(${obj.id},${name_of_publisher})`
 
-    var target=document.createAttribute('target')
-    target.value='_blank'
+    var target = document.createAttribute('target')
+    target.value = '_blank'
     container_div.setAttributeNode(onclick)
     container_div.setAttributeNode(target)
 
@@ -114,7 +114,7 @@ function populate_books(obj, row) {
     // span.innerHTML = obj.title
     // book_title.appendChild(span)
 
-    book_title.innerHTML=obj.title
+    book_title.innerHTML = obj.title
 
     var book_author = document.createElement('div')
     book_author.classList.add('book_author')
@@ -317,6 +317,6 @@ function clear_author() {
 }
 
 
-function open_window(id,name){
-    window.open(`book.html?id=${id}&name=${name}'`)
+function open_window(id, name) {
+    window.open(`book.html?id=${id}&name=${name}`)
 }
