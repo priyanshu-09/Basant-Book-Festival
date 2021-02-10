@@ -175,6 +175,7 @@
     top: 90vh;
     z-index: 3;
 }
+
 /* 
 .next:hover {
     background: transparent;
@@ -370,4 +371,90 @@
     align-items: center;
     /* line-height: 26px; */
     color: #3C3C3C;
+}
+
+@media(max-width:600px) {
+    .filter_menu {
+        width: 70vw;
+        position: absolute;
+        left: 15vw;
+    }
+    .search_bar {
+        width: 60vw;
+    }
+    .subjects_dropdown_container {
+        width: 66vw;
+    }
+    .dropdown {
+        padding: 1vh 1vw 1vh 3vw;
+    }
+    .button_container {
+        width: 66vw;
+    }
+    .button_container>div {
+        font-size: 0.8em;
+        padding: 1.5vh 4vw;
+    }
+    .search_section {
+        height: 5vh;
+        margin-top: 5vh;
+    }
+    .back_button {
+        margin-left: 10vw;
+        padding: 0 2vw;
+    }
+    .all_books_heading {
+        font-size: 1.3em;
+    }
+    .wrapper {
+        height: 200vh;
+    }
+    .background {
+        height: 200vh;
+    }
+    .books_container {
+        height: 160vh;
+    }
+    .books_flexbox {
+        display: grid;
+        grid-template-columns: auto auto;
+        height: 80vh;
+    }
+    .book_card {
+        width: 40vw;
+        margin: 0.8vh 2.5vw 0.8vh 2.5vw;
+    }
+    .book_img_container {
+        width: 40vw;
+    }
+    .book_img {
+        width: auto;
+        height: 13vh;
+    }
+    .book_text {
+        width: 40vw;
+    }
+    .book_title {
+        width: 37vw;
+        height: 1em;
+    }
+    .book_author {
+        width: 37vw;
+    }
+    .book_price_container {
+        width: 40vw;
+        justify-content: space-evenly;
+    }
+    .next, .prev {
+        top: 190vh;
+        font-size: 0.8em;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    .next {
+        right: 20vw;
+    }
+    .prev {
+        left: 20vw;
+    }
 }

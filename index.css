@@ -533,8 +533,13 @@ body {
     .log_out {
         margin-top: 1vh;
     }
+    .cart_container {
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-right: 3vw;
+    }
     .login_button_container {
-        padding-right: 5vw;
+        padding-right: 2.5vw;
         /* padding-top: 1vh; */
         max-width: 50vw;
         margin-top: 2.5vh;
