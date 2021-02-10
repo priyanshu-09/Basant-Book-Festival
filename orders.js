@@ -6,6 +6,29 @@ var ordered_books = []
 var recommended_books = []
 
 var publishers_arr
+var is_professor = sessionStorage.getItem('is_professor')
+
+if (!is_professor) {
+    document.getElementsByClassName('orders')[0].style.display = 'none'
+    document.getElementsByClassName('headings_container')[0].innerHTML = `
+        <div class="headings items">
+                            Items
+                        </div>
+                        <div class="headings seller">
+                            Seller
+                        </div>
+                        <div class="prices">
+                            Author
+                        </div>
+                        <div>
+                            Year of Publication
+                        </div>
+    `
+    document.getElementsByClassName('recommended')[0].style.opacity = '1'
+    document.getElementsByClassName('recommended')[0].style.transform = 'scale(1)'
+    document.getElementsByClassName('final_price_container')[0].style.opacity = '0'
+    document.getElementsByClassName('items_container')[0].style.height = '80%'
+}
 
 fetch("https://bbf.bits-pilani.ac.in/api/publisher/list/")
     .then(response => response.json())
@@ -36,6 +59,7 @@ fetch("https://bbf.bits-pilani.ac.in/api/order/my/", requestOptions)
         console.log(result)
         order = result.personal
         recommendeds = result.library
+
         populate()
     })
     .catch(error => console.log('error', error));
@@ -169,8 +193,14 @@ async function populate() {
         })
 
     }
+    document.getElementsByClassName('loader_wrapper')[0].style.display='none'
     console.log('going to orders')
-    orders()
+    if (is_professor) {
+        order()
+    }
+    else {
+        recommended()
+    }
 
 }
 

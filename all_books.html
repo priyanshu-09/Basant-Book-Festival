@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="book.css">
     <link rel="stylesheet" href="all_books.css">
+    <link rel="stylesheet" href="loader.css">
     <link rel="icon" href="assets/icon.png">
 
     <meta name="google-signin-scope" content="profile email">
@@ -19,6 +20,10 @@
 
 <body>
     <div class="fake_header"></div>
+    <div class="loader_wrapper">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <div class="loader_text">Loading...</div>
+    </div>
     <img src="assets/book1.png" class="background">
     <div class="next button_inverse" onclick="next()">
         Next Page
@@ -83,8 +88,13 @@
                 <div class="cart_container">
                     <img src="assets/cart.png" class="cart" onclick="location.href='orders.html'">
                 </div>
-                <div id="login_button" class="button customGPlusSignIn">
-                    Login
+                <div class="login_logout">
+                    <div id="login_button" class="button customGPlusSignIn">
+                        Log In using BITS Mail
+                    </div>
+                    <div class="button_inverse log_out" style="display: none;" onclick="signOut()">
+                        Log Out
+                    </div>
                 </div>
 
             </div>

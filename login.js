@@ -27,6 +27,7 @@ function attachSignin(element) {
             document.getElementById('login_button').innerHTML = "Welcome " +
                 googleUser.getBasicProfile().getGivenName();
             document.getElementsByClassName('cart')[0].style.display = 'block'
+            document.getElementsByClassName('log_out')[0].style.display = 'flex'
         }, function (error) {
             alert(JSON.stringify(error, undefined, 2));
         });
@@ -38,6 +39,7 @@ function signOut() {
         document.getElementsByClassName('cart')[0].style.display = 'none'
         document.getElementsByClassName('log_out')[0].style.display = 'none'
         document.getElementById('login_button').innerHTML = 'Log In using BITS Mail'
+        sessionStorage.clear()
     });
 
 }
@@ -72,6 +74,7 @@ function authenticate(id_token) {
             console.log(result)
             sessionStorage.setItem("token", result.token);
             sessionStorage.setItem("name", result.first_name)
+            sessionStorage.setItem('is_professor',result.is_professor)
         })
         .catch(error => alert(error));
 

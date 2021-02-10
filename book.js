@@ -1,7 +1,9 @@
 
-var temp = []
-localStorage.setItem('orders', JSON.stringify(temp))
-localStorage.setItem('recommended', JSON.stringify(temp))
+// var temp = []
+// localStorage.setItem('orders', JSON.stringify(temp))
+// localStorage.setItem('recommended', JSON.stringify(temp))
+var is_professor = sessionStorage.getItem('is_professor')
+
 
 const params = new URLSearchParams(window.location.search)
 let id_of_book
@@ -87,16 +89,19 @@ function populate() {
     book_price_container.appendChild(old_price)
     book_price_container.appendChild(discount)
 
-    var personal_use = document.createElement('div')
-    personal_use.classList.add('button_container')
+    if (is_professor != undefined && is_professor) {
+        var personal_use = document.createElement('div')
+        personal_use.classList.add('button_container')
 
-    var personal_use_button = document.createElement('div')
-    personal_use_button.classList.add('button')
-    var onclick_buy = document.createAttribute('onclick')
-    onclick_buy.value = 'Buy()'
-    personal_use_button.innerHTML = 'Buy for Personal Use'
-    personal_use_button.setAttributeNode(onclick_buy)
-    personal_use.appendChild(personal_use_button)
+        var personal_use_button = document.createElement('div')
+        personal_use_button.classList.add('button')
+        var onclick_buy = document.createAttribute('onclick')
+        onclick_buy.value = 'Buy()'
+        personal_use_button.innerHTML = 'Buy for Personal Use'
+        personal_use_button.setAttributeNode(onclick_buy)
+        personal_use.appendChild(personal_use_button)
+
+    }
 
     var recommended = document.createElement('div')
     recommended.classList.add('button_container')
@@ -113,7 +118,11 @@ function populate() {
     book_content.appendChild(book_author)
     book_content.appendChild(book_publisher_container)
     book_content.appendChild(book_price_container)
-    book_content.appendChild(personal_use)
+
+    if (is_professor != undefined && is_professor) {
+        book_content.appendChild(personal_use)
+
+    }
     book_content.appendChild(recommended)
 
     document.getElementsByClassName('rounded_box')[0].appendChild(book_img_container)
@@ -126,9 +135,8 @@ function Buy() {
     document.getElementsByClassName('wrapper')[0].style.opacity = '0'
 
     document.getElementById('pop_up_content').innerHTML = `
-        <b>Thank you for selecting the book for your personal use.</b> <br>
-         This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final purchase by you. On your confirmation, the vendor will issue a bill in your name to make the payment. Once the payment is made, you can collect the book from the Library.<br><br>
-</b>Are you sure you want to continue ?</b>
+        <br><br>
+<b>Are you sure you want to continue buying this book ?</b>
     `
     document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">
@@ -145,9 +153,8 @@ function Recommend() {
     document.getElementsByClassName('wrapper')[0].style.opacity = '0'
 
     document.getElementById('pop_up_content').innerHTML = `
-        <b>Thank you for recommending the book for the Library!</b><br>
-This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.<br><br>
-</b>Are you sure you want to continue ?</b>
+        <br><br>
+<b>Are you sure you want to continue recommending this book ?</b>
     `
     document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">
@@ -203,7 +210,7 @@ function yes_buy() {
 
                     var formdata = new FormData();
                     formdata.append("book_id", obj.id);
-                    formdata.append("recommended", "False");
+                    formdata.append("recommended", "false");
 
                     var requestOptions = {
                         method: 'POST',
@@ -218,7 +225,8 @@ function yes_buy() {
 
                             console.log(result.message)
                             document.getElementsByClassName('buttons_container')[0].innerHTML = ''
-                            document.getElementById('pop_up_content').innerHTML = result.message
+                            document.getElementById('pop_up_content').innerHTML = `<b>Thank you for selecting the book for your personal use.</b> <br>
+         This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final purchase by you. On your confirmation, the vendor will issue a bill in your name to make the payment. Once the payment is made, you can collect the book from the Library.`
                             setTimeout(function () {
                                 document.getElementById('pop_up').style.display = 'none'
                                 document.getElementsByClassName('wrapper')[0].style.opacity = '1'
@@ -271,7 +279,7 @@ function yes_recommend() {
 
                     var formdata = new FormData();
                     formdata.append("book_id", obj.id);
-                    formdata.append("recommended", "False");
+                    formdata.append("recommended", "true");
 
                     var requestOptions = {
                         method: 'POST',
@@ -283,10 +291,11 @@ function yes_recommend() {
                     fetch("https://bbf.bits-pilani.ac.in/api/order/place/", requestOptions)
                         .then(response => response.json())
                         .then(result => {
-                            
+
                             console.log(result.message)
                             document.getElementsByClassName('buttons_container')[0].innerHTML = ''
-                            document.getElementById('pop_up_content').innerHTML = result.message
+                            document.getElementById('pop_up_content').innerHTML = `<b>Thank you for recommending the book for the Library!</b><br>
+This book will be procured on approval. Once it arrives, you will be invited to go through the same for its final selection.`
                             setTimeout(function () {
                                 document.getElementById('pop_up').style.display = 'none'
                                 document.getElementsByClassName('wrapper')[0].style.opacity = '1'
