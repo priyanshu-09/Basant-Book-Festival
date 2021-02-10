@@ -28,6 +28,7 @@ fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
     .catch(error => console.log('error', error));
 
 function populate() {
+    document.getElementsByClassName('loader_wrapper')[0].style.display='none'
     document.getElementsByClassName('rounded_box')[0].innerHTML = ''
 
     var book_img_container = document.createElement('div')

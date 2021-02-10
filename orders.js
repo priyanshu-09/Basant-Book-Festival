@@ -3,12 +3,13 @@ var recommendeds = []
 
 
 var ordered_books = []
+var ordered_id = []
 var recommended_books = []
 
 var publishers_arr
 var is_professor = sessionStorage.getItem('is_professor')
 
-if (is_professor=='false') {
+if (is_professor == 'false') {
     document.getElementsByClassName('orders')[0].style.display = 'none'
     document.getElementsByClassName('headings_container')[0].innerHTML = `
         <div class="headings items">
@@ -102,9 +103,13 @@ function orders() {
                             <div class="books_old_price">
                                 ${parseInt(ordered_books[i].price_indian_currency)}
                             </div>
-                            <div class="books_new_price">
-                                ${parseInt(ordered_books[i].expected_price)}
+                            <div class="books_price_cancel_container">
+                                <div class="books_new_price">
+                                    ${parseInt(ordered_books[i].expected_price)}
+                                </div>
+                                <div class='cancel' onclick='cancel_order(${i},${ordered_id[i]})'
                             </div>
+                            
         `
         total_amt += parseInt(ordered_books[i].expected_price)
         document.getElementsByClassName('items_container')[0].appendChild(div)
@@ -176,10 +181,12 @@ async function populate() {
     recommended_books = []
     for (var i = 0; i < order.length; i++) {
         var id_of_book = order[i].book_id
+        var order_id = order[i].id
         console.log('inside for')
         await get_book_details(id_of_book).then(obj => {
             console.log('got the obj')
             ordered_books.push(obj)
+            ordered_id.push(order_id)
         })
 
     }
@@ -193,9 +200,9 @@ async function populate() {
         })
 
     }
-    document.getElementsByClassName('loader_wrapper')[0].style.display='none'
+    document.getElementsByClassName('loader_wrapper')[0].style.display = 'none'
     console.log('going to orders')
-    if (is_professor=='true') {
+    if (is_professor == 'true') {
         orders()
     }
     else {
@@ -222,4 +229,30 @@ async function get_book_details(id_book) {
     // .catch(error => console.log('error', error));
 
 
+}
+
+function cancel_order(index, order_id) {
+    ordered_books.splice(index, 1)
+    ordered_id.splice(index, 1)
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer "+token);
+
+    var formdata = new FormData();
+    formdata.append("order_id", ordered_id.toString());
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+    };
+
+    fetch("https://bbf.bits-pilani.ac.in/api/order/cancel/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            console.log(result)
+            orders()
+        })
+        .catch(error => console.log('error', error));
 }

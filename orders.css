@@ -7,8 +7,7 @@
 }
 
 .back_button {
-    margin-left: 5vw;
-    margin-top: 10vh;
+    margin: 10vh 0 0 0;
 }
 
 .orders_wrapper {
@@ -20,6 +19,8 @@
 .back_section {
     width: 11vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 .orders_container {
@@ -154,10 +155,23 @@
     height: 100%;
 }
 
+.books_price_cancel_container {
+    display: flex;
+    justify-content: space-between !important;
+    
+}
+
 .books_new_price {
     height: 100%;
+    color: #3C3C3C;
+    font-weight: bold !important;
+}
+
+.cancel {
     color: #FF596B;
     font-weight: bold !important;
+    cursor: pointer;
+    margin-left: 4vw;
 }
 
 .books_year {
