@@ -158,13 +158,13 @@
 .books_price_cancel_container {
     display: flex;
     justify-content: space-between !important;
-    
 }
 
 .books_new_price {
     height: 100%;
     color: #3C3C3C;
     font-weight: bold !important;
+    width: 5vw;
 }
 
 .cancel {

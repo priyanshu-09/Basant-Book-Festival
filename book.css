@@ -19,7 +19,7 @@
     left: 20vw;
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -36,6 +36,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 5vh;
 }
 
 .fake_header {

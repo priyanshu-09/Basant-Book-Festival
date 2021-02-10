@@ -11,11 +11,12 @@
 </head>
 
 <body>
-    <div class=""
+    <div onclick="open()">hi</div>
 </body>
 <script>
-    gapi.load('auth2',function(){
-        gapi.auth2.init()
-    })
+    function open() {
+        window.open('/hi')
+    }
 </script>
+
 </html>
