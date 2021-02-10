@@ -84,7 +84,7 @@ function populate_books(obj, row) {
     container_div.classList.add('book_card')
     var onclick = document.createAttribute('onclick')
     // onclick.value = `location.href='book.html?id=${obj.id}&name=${name_of_publisher}'`
-    onclick.value = `open_window(${obj.id},${name_of_publisher})`
+    onclick.value = `open_window()`
 
     // var target = document.createAttribute('target')
     // target.value = '_blank'
@@ -319,5 +319,5 @@ function clear_author() {
 
 function open_window(id, name) {
     console.log('opening a new window')
-    window.open(`book.html?id=${id}&name=${name}`)
+    window.open(`book.html`)
 }
