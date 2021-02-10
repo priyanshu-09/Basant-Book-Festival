@@ -118,9 +118,16 @@ function ready() {
     }
     else {
         setTimeout(function () {
-            document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
-            document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
-        }, 300)
+            if (height_of_svg == 0) {
+                document.getElementsByClassName('landing_svg')[0].style.top = '0px'
+                document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
+            }
+            else {
+                document.getElementsByClassName('landing_svg')[0].style.top = (window.outerHeight - (percent_on_hero_section * height_of_svg)) + 'px'
+                document.getElementsByClassName('landing_svg')[0].style.opacity = '1'
+            }
+
+        }, 500)
     }
 
 }
