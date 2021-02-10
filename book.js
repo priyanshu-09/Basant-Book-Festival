@@ -89,7 +89,7 @@ function populate() {
     book_price_container.appendChild(old_price)
     book_price_container.appendChild(discount)
 
-    if (is_professor != undefined && is_professor) {
+    if (is_professor != undefined && is_professor=='true') {
         var personal_use = document.createElement('div')
         personal_use.classList.add('button_container')
 
@@ -119,7 +119,7 @@ function populate() {
     book_content.appendChild(book_publisher_container)
     book_content.appendChild(book_price_container)
 
-    if (is_professor != undefined && is_professor) {
+    if (is_professor != undefined && is_professor=='true') {
         book_content.appendChild(personal_use)
 
     }

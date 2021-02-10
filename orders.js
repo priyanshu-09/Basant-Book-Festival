@@ -195,8 +195,8 @@ async function populate() {
     }
     document.getElementsByClassName('loader_wrapper')[0].style.display='none'
     console.log('going to orders')
-    if (is_professor) {
-        order()
+    if (is_professor=='true') {
+        orders()
     }
     else {
         recommended()
