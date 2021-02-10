@@ -71,13 +71,13 @@ function populate() {
     var new_price_id = document.createAttribute('id')
     new_price_id.value = 'book_new_price'
     new_price.setAttributeNode(new_price_id)
-    new_price.innerHTML = '₹' + obj.expected_price
+    new_price.innerHTML = '₹' + parseInt(obj.expected_price)
 
     var old_price = document.createElement('div')
     var old_price_id = document.createAttribute('id')
     old_price_id.value = 'book_old_price'
     old_price.setAttributeNode(old_price_id)
-    old_price.innerHTML = '₹' + obj.price_indian_currency
+    old_price.innerHTML = '₹' + parseInt(obj.price_indian_currency)
 
     var discount = document.createElement('div')
     var discount_id = document.createAttribute('id')
@@ -140,7 +140,7 @@ function Buy() {
     `
     document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">
-                Cancel
+                No
             </div>
             <div class="button" onclick="yes_buy()">
                 Yes
@@ -158,7 +158,7 @@ function Recommend() {
     `
     document.getElementsByClassName('buttons_container')[0].innerHTML = `
         <div class="button_inverse" onclick="cancel()">
-                Cancel
+                No
             </div>
             <div class="button" onclick="yes_recommend()">
                 Yes
@@ -210,7 +210,7 @@ function yes_buy() {
 
                     var formdata = new FormData();
                     formdata.append("book_id", obj.id);
-                    formdata.append("recommended", "false");
+                    formdata.append("recommended", "False");
 
                     var requestOptions = {
                         method: 'POST',
@@ -232,7 +232,7 @@ function yes_buy() {
                                 document.getElementsByClassName('wrapper')[0].style.opacity = '1'
 
                                 document.getElementById('pop_up_content').innerHTML = ''
-                            }, 1500)
+                            }, 2500)
                         })
                         .catch(error => console.log('error', error));
                 }
@@ -279,7 +279,7 @@ function yes_recommend() {
 
                     var formdata = new FormData();
                     formdata.append("book_id", obj.id);
-                    formdata.append("recommended", "true");
+                    formdata.append("recommended", "True");
 
                     var requestOptions = {
                         method: 'POST',
@@ -301,7 +301,7 @@ This book will be procured on approval. Once it arrives, you will be invited to 
                                 document.getElementsByClassName('wrapper')[0].style.opacity = '1'
 
                                 document.getElementById('pop_up_content').innerHTML = ''
-                            }, 1500)
+                            }, 2500)
                         })
                         .catch(error => console.log('error', error));
                 }

@@ -66,7 +66,11 @@
 
 .back_button {
     height: 5vh;
-    width: 5vh;
+    width: max-content;
+    color: white;
+    font-size: 1.9vh;
+    text-align: center;
+    padding: 0 1vw;
     background: #3D429C;
     border-radius: 8px;
     display: flex;
@@ -79,6 +83,7 @@
 
 .arrow {
     height: 1.5vh;
+    margin-right: 1vw;
 }
 
 .search_bar {

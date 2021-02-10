@@ -8,7 +8,7 @@ var recommended_books = []
 var publishers_arr
 var is_professor = sessionStorage.getItem('is_professor')
 
-if (!is_professor) {
+if (is_professor=='false') {
     document.getElementsByClassName('orders')[0].style.display = 'none'
     document.getElementsByClassName('headings_container')[0].innerHTML = `
         <div class="headings items">
@@ -100,13 +100,13 @@ function orders() {
                                 ${publishers_name}
                             </div>
                             <div class="books_old_price">
-                                ${ordered_books[i].price_indian_currency}
+                                ${parseInt(ordered_books[i].price_indian_currency)}
                             </div>
                             <div class="books_new_price">
-                                ${ordered_books[i].expected_price}
+                                ${parseInt(ordered_books[i].expected_price)}
                             </div>
         `
-        total_amt += ordered_books[i].expected_price
+        total_amt += parseInt(ordered_books[i].expected_price)
         document.getElementsByClassName('items_container')[0].appendChild(div)
     }
     document.getElementsByClassName('final_price')[0].innerHTML = total_amt.toString()

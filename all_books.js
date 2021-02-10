@@ -120,11 +120,11 @@ function populate_books(obj, row) {
 
     var new_price = document.createElement('div')
     new_price.classList.add('new_price')
-    new_price.innerHTML = '₹' + obj.expected_price
+    new_price.innerHTML = '₹' + parseInt(obj.expected_price)
 
     var old_price = document.createElement('div')
     old_price.classList.add('old_price')
-    old_price.innerHTML = '₹' + obj.price_indian_currency
+    old_price.innerHTML = '₹' + parseInt(obj.price_indian_currency)
 
     var discount = document.createElement('div')
     discount.classList.add('discount')
