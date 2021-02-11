@@ -434,6 +434,7 @@
     .book_img {
         width: auto;
         height: 13vh;
+        background-size: cover;
     }
     .book_text {
         width: 40vw;
