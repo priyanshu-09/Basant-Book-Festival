@@ -22,7 +22,7 @@ fetch(`https://bbf.bits-pilani.ac.in/api/book/${id_of_book}`)
     .then(response => response.json())
     .then(data => {
         obj = data.data[0]
-        console.log(obj)
+        //console.log(obj)
         // console.log(obj)
         populate()
     })

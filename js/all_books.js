@@ -49,7 +49,7 @@ var publishers_arr = localStorage.getItem('id' + id_of_publisher)
 fetch("https://bbf.bits-pilani.ac.in/api/book/filter/fs/publisher/", requestOptions)
     .then(response => response.json())
     .then(result => {
-        console.log(result.data)
+        //console.log(result.data)
         working_arr = result.data;
 
         whole_books_array = working_arr
