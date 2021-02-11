@@ -64,7 +64,6 @@
     display: flex;
     align-items: center;
     margin-top: 2vh;
-
 }
 
 .back_button {
@@ -132,6 +131,7 @@
     /* width: 20vw; */
     margin-left: 5vw;
     border-radius: 10px;
+    background-image: url('../assets/palceholder.png')
 }
 
 .book_content {
