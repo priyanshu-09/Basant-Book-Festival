@@ -118,11 +118,11 @@ function populate_books(obj, row) {
 
     var img = document.createElement('img')
     var src = document.createAttribute('src')
-    if (obj.thumbnail == '') {
-        console.log(obj, 'blank')
-    }
+    var onerror = document.createAttribute('onerror')
+    onerror.value = "this.onerror=null;this.src='assets/placeholder.png';"
     src.value = obj.thumbnail
     img.setAttributeNode(src)
+    img.setAttributeNode(onerror)
     var class_name = document.createAttribute('class')
     class_name.value = 'book_img'
     img.setAttributeNode(class_name)

@@ -38,6 +38,9 @@ function populate() {
     var src = document.createAttribute('src')
     src.value = obj.image
     img.setAttributeNode(src)
+    var onerror = document.createAttribute('onerror')
+    onerror.value = "this.onerror=null;this.src='assets/placeholder.png';"
+    img.setAttributeNode(onerror)
     var class_name = document.createAttribute('class')
     class_name.value = 'book_img'
     img.setAttributeNode(class_name)
