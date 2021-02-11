@@ -28,7 +28,7 @@ body {
 
 .frost2 {
     width: 100vw;
-    height: 230vh;
+    height: 250vh;
     position: absolute;
     left: 0;
     top: 100vh;
@@ -51,7 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 330vh;
+    /* height: 330vh; */
     overflow-x: hidden;
     scroll-behavior: smooth;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.3);
@@ -289,6 +289,7 @@ body {
 
 .about_heading {
     width: 35vw;
+    margin-top: 15vh;
     text-align: left;
     margin-left: 8vw;
     font-weight: bold;
@@ -336,6 +337,8 @@ body {
 .about_pics {
     width: 50vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .images {
@@ -346,7 +349,7 @@ body {
 
 #publishers {
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
 }
@@ -383,6 +386,7 @@ body {
     margin-top: 5vh;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 15vh;
 }
 
 .publishers_flexbox {
@@ -592,7 +596,7 @@ body {
     .about_heading {
         width: 85vw;
         margin-left: 0;
-        margin-top: 10vh;
+        margin-top: 19vh;
     }
     .about_text {
         width: 85vw;
@@ -616,6 +620,7 @@ body {
     }
     .publishers_grid_container {
         justify-content: flex-start;
+        margin-bottom: 9vh;
         /* padding-top: vh; */
     }
     .stalls {
@@ -667,5 +672,8 @@ body {
     .contact_us_links_container a {
         font-size: 0.6em;
         display: flex;
+    }
+    .frost2 {
+        height: 230vh;
     }
 }
