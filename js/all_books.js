@@ -49,8 +49,9 @@ var publishers_arr = localStorage.getItem('id' + id_of_publisher)
 fetch("https://bbf.bits-pilani.ac.in/api/book/filter/fs/publisher/", requestOptions)
     .then(response => response.json())
     .then(result => {
-        // console.log(result.data)
+        console.log(result.data)
         working_arr = result.data;
+
         whole_books_array = working_arr
         total_books = working_arr.length;
         document.getElementsByClassName('all_books_heading')[0].innerHTML = name_of_publisher + ' - ' + total_books + ' Books'
@@ -117,7 +118,8 @@ function populate_books(obj, row) {
 
     var img = document.createElement('img')
     var src = document.createAttribute('src')
-    src.value = obj.thumbnail
+    if (obj.thumbnail ==)
+        src.value = obj.thumbnail
     img.setAttributeNode(src)
     var class_name = document.createAttribute('class')
     class_name.value = 'book_img'
