@@ -46,7 +46,6 @@
     top: 0px;
     position: absolute;
     z-index: -1;
-    background: #FFFFFF;
     mix-blend-mode: normal;
     opacity: 0.2;
     /* backdrop-filter: blur(250px); */
